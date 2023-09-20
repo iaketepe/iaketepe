@@ -1,4 +1,4 @@
-### Hello! My Name is Iyanuloluwa Aketepe!
+### Hello! My Name is Iyanu Aketepe!
 
 I am a Computer Science student at the University of Ottawa. I'm interesting in learning more about software development
 and it's practices. I'm also taking the time to learn more about web development and frameworks.
