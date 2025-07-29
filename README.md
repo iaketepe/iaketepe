@@ -1,7 +1,6 @@
-### Hello! My Name is Iyanu Aketepe!
+### Hi, my name is Iyanu Aketepe.
 
-I am a Computer Science student at the University of Ottawa. I'm interesting in learning more about software development
-and it's practices. I'm also taking the time to learn more about web development and frameworks.
+I recently graduated with a degree in Computer Science. My current focus is on learning more about web development and data/information systems by building software projects.
 
 <!---
 iyan5440/iyan5440 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
