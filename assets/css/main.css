@@ -204,55 +204,6 @@ body.is-preload *:after {
 
 	}
 
-
-/* Row */
-
-.row {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 1em;
-}
-
-/* ≤1280px: 10 columns */
-@media screen and (max-width: 1280px) {
-  .row {
-    grid-template-columns: repeat(10, 1fr);
-    gap: 0.9em;
-  }
-}
-
-/* ≤980px: 8 columns */
-@media screen and (max-width: 980px) {
-  .row {
-    grid-template-columns: repeat(8, 1fr);
-    gap: 0.75em;
-  }
-}
-
-/* ≤736px: 6 columns */
-@media screen and (max-width: 736px) {
-  .row {
-    grid-template-columns: repeat(6, 1fr);
-    gap: 0.5em;
-  }
-}
-
-/* ≤480px: 4 columns */
-@media screen and (max-width: 480px) {
-  .row {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.4em;
-  }
-}
-
-/* ≤360px: 2 columns */
-@media screen and (max-width: 360px) {
-  .row {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.3em;
-  }
-}
-
 /* Form */
 
 form {
