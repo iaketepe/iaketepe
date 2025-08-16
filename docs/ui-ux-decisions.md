@@ -1,6 +1,6 @@
-UI/UX Design Decisions:
+UI/UX Design Decisions (Trade Offs):
 
-
+Using Boilerplate vs Starting From the Ground Up
 
 Reference to Boilerplate - SolidState
 

@@ -963,6 +963,7 @@ form > .fields > .field.quarter {
 			opacity: 1;
 			border-bottom: solid 2px rgba(255, 255, 255, 0.125);
 			font-size: 2.25em;
+			/*font-weight: 300; */
 			margin-bottom: 0.8em;
 			padding-bottom: 0.4em;
 		}
