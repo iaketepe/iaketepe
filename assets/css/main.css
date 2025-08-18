@@ -119,6 +119,20 @@
 		margin: 0 0 2em 0;
 	}
 
+	h1 {
+		color: #ffffff;
+		font-family: Raleway, Helvetica, sans-serif;
+		letter-spacing: 0.1em;
+		margin: 0 0 1em 0;
+		text-transform: uppercase;
+		opacity: 1;
+		border-bottom: solid 2px rgba(255, 255, 255, 0.125);
+		font-size: 2.25em;
+		font-weight: 300; 
+		margin-bottom: 0.8em;
+		padding-bottom: 0.4em;
+	}
+
 	h2 {
 		color: #ffffff;
 		font-family: Raleway, Helvetica, sans-serif;
@@ -127,7 +141,11 @@
 		text-transform: uppercase;
 	}
 
-	h1, h3, h4, h5, h6 {
+
+
+
+
+	h3, h4, h5, h6 {
 		color: #ffffff;
 		font-family: Raleway, Helvetica, sans-serif;
 		font-weight: 700;
@@ -831,16 +849,6 @@ form > .fields > .field.quarter {
 				text-align: center;
 				width: 2.25em;
 			}
-
-		#banner h2 {
-			filter: blur(0);
-			opacity: 1;
-			border-bottom: solid 2px rgba(255, 255, 255, 0.125);
-			font-size: 2.25em;
-			/*font-weight: 300; */
-			margin-bottom: 0.8em;
-			padding-bottom: 0.4em;
-		}
 
 		#banner p {
 			filter: blur(0);
