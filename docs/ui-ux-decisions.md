@@ -1,8 +1,11 @@
-UI/UX Design Decisions (Trade Offs):
+## UI/UX Design Decisions (Trade Offs):
 
-Using Boilerplate vs Starting From the Ground Up
+### Using Boilerplate vs Starting From the Ground Up
+#### Why Use a Boilerplate?
 
-Reference to Boilerplate - SolidState
+### Dealing with Boilerplate
+
+#### Reference to Boilerplate - SolidState
 
 ///
 /// Solid State by HTML5 UP

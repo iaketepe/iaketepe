@@ -33,13 +33,4 @@
 		background-position:	center,
 								center;
 
-		// Stops initial animations until page loads.
-			/* Disable animations and transitions until page load completes */
-			body.is-preload *, 
-			body.is-preload *::before, 
-			body.is-preload *::after {
-			animation: none !important;
-			transition: none !important;
-			}
-
 	}
