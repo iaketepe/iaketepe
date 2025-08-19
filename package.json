@@ -1,0 +1,33 @@
+{
+  "name": "iaketepe",
+  "version": "1.0.0",
+  "description": "My Personal Site",
+  "main": "postcss.config.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build:css": "postcss assets/css/main.css -o assets/css/tailwind.css",
+    "watch:css": "postcss assets/css/main.css -o assets/css/tailwind.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iaketepe/iaketepe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/iaketepe/iaketepe/issues"
+  },
+  "homepage": "https://github.com/iaketepe/iaketepe#readme",
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.12",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.12"
+  },
+  "devDependencies": {
+    "postcss-cli": "^11.0.1"
+  }
+}
