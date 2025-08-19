@@ -116,9 +116,13 @@ h1 {
 }
 h2 {
   color: #ffffff;
+  opacity: 1;
   font-family: Raleway, Helvetica, sans-serif;
-  letter-spacing: 0.1em;
+  font-size: 1em;
+  font-weight: 200;
   margin: 0 0 1em 0;
+  letter-spacing: 0.1em;
+  line-height: 2;
   text-transform: uppercase;
 }
 h3 {
@@ -157,7 +161,7 @@ h1.major, h2.major, h3.major, h4.major, h5.major, h6.major {
   border-bottom: solid 2px rgba(255, 255, 255, 0.125);
 }
 h2 {
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 h3 {
   font-size: 1.2em;
@@ -739,10 +743,10 @@ input[type="submit"].disabled, input[type="submit"]:disabled,
   #banner .logo .icon {
     font-size: 1.5em;
   }
-  #banner h2 {
+  #banner h1 {
     font-size: 1.5em;
   }
-  #banner p {
+  #banner h2 {
     font-size: 0.8em;
   }
 }

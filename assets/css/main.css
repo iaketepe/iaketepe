@@ -147,10 +147,15 @@
 
 	h2 {
 		color: #ffffff;
+		opacity: 1;
 		font-family: Raleway, Helvetica, sans-serif;
-		letter-spacing: 0.1em;
+		font-size: 1em;
+		font-weight: 200;
 		margin: 0 0 1em 0;
+		letter-spacing: 0.1em;
+		line-height: 2;
 		text-transform: uppercase;
+
 	}
 
 	h3 {
@@ -196,7 +201,7 @@
 		}
 
 	h2 {
-		font-size: 1.2em;  /* TBC to based on banner p*/
+		font-size: 1.1em;  /* original 1em, alt: 1.2*/
 	}
 
 	h3 {
@@ -914,11 +919,11 @@ form > .fields > .field.quarter {
 						font-size: 1.5em;
 					}
 
-				#banner h2 {
+				#banner h1 {
 					font-size: 1.5em;
 				}
 
-				#banner p {
+				#banner h2 {
 					font-size: 0.8em;
 				}
 
