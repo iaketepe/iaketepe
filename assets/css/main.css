@@ -127,8 +127,8 @@
 		text-transform: uppercase;
 		opacity: 1;
 		border-bottom: solid 2px rgba(255, 255, 255, 0.125);
-		font-size: 2.25em;
-		font-weight: 300; 
+		font-size: 2.25em !important;
+		/* font-weight: 300; */
 		margin-bottom: 0.8em;
 		padding-bottom: 0.4em;
 	}
@@ -141,11 +141,17 @@
 		text-transform: uppercase;
 	}
 
+	h4 {
+		color: #ffffff;
+		font-family: Raleway, Helvetica, sans-serif;
+		font-weight: 700 !important;
+		letter-spacing: 0.1em;
+		margin: 0 0 1em 0;
+		text-transform: uppercase;
+	}
 
 
-
-
-	h3, h4, h5, h6 {
+	h3, h5, h6 {
 		color: #ffffff;
 		font-family: Raleway, Helvetica, sans-serif;
 		font-weight: 700;
@@ -178,7 +184,7 @@
 	}
 
 	h4 {
-		font-size: 0.7em;
+		font-size: 0.9em;  /* 0.7*/
 	}
 
 	h5 {
@@ -195,8 +201,8 @@
 			font-size: 1em;
 		}
 
-		h3 {
-			font-size: 0.8em;
+		h4 { /* h4*/
+			font-size: 0.8em; 
 		}
 
 	}
@@ -584,13 +590,7 @@ form > .fields > .field.quarter {
 /* Features */
 
 	.features {
-		display: -moz-flex;
-		display: -webkit-flex;
-		display: -ms-flex;
 		display: flex;
-		-moz-flex-wrap: wrap;
-		-webkit-flex-wrap: wrap;
-		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
 		margin: 0 0 2em 0;
 	}
