@@ -110,12 +110,18 @@ h1 {
   text-transform: uppercase;
   opacity: 1;
   border-bottom: solid 2px rgba(255, 255, 255, 0.125);
-  font-size: 2.25em !important;
+  font-size: 2.25em;
   margin-bottom: 0.8em;
   padding-bottom: 0.4em;
 }
-
 h2 {
+  color: #ffffff;
+  font-family: Raleway, Helvetica, sans-serif;
+  letter-spacing: 0.1em;
+  margin: 0 0 1em 0;
+  text-transform: uppercase;
+}
+h3 {
   color: #ffffff;
   font-family: Raleway, Helvetica, sans-serif;
   letter-spacing: 0.1em;
@@ -130,7 +136,7 @@ h4 {
   margin: 0 0 1em 0;
   text-transform: uppercase;
 }
-h3, h5, h6 {
+h5, h6 {
   color: #ffffff;
   font-family: Raleway, Helvetica, sans-serif;
   font-weight: 700;
@@ -154,7 +160,7 @@ h2 {
   font-size: 1.2em;
 }
 h3 {
-  font-size: 0.9em;
+  font-size: 1.2em;
 }
 h4 {
   font-size: 0.9em;
@@ -166,7 +172,7 @@ h6 {
   font-size: 0.7em;
 }
 @media screen and (max-width: 736px) {
-  h2 {
+  h3 {
     font-size: 1em;
   }
   h4 {
@@ -562,9 +568,6 @@ input[type="submit"].disabled, input[type="submit"]:disabled,
   z-index: 10000;
 }
 #header h1 {
-  -moz-transition: opacity 0.2s ease-in-out, visibility 0.2s;
-  -webkit-transition: opacity 0.2s ease-in-out, visibility 0.2s;
-  -ms-transition: opacity 0.2s ease-in-out, visibility 0.2s;
   transition: opacity 0.2s ease-in-out, visibility 0.2s;
   border-bottom: 0;
   font-size: 0.8em;
@@ -607,8 +610,6 @@ input[type="submit"].disabled, input[type="submit"]:disabled,
   padding: 0 1.35em;
 }
 #header nav a[href="#menu"]:before {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -630,10 +631,6 @@ input[type="submit"].disabled, input[type="submit"]:disabled,
 }
 #header.alt {
   background-color: transparent;
-}
-#header.alt h1 {
-  opacity: 0;
-  visibility: hidden;
 }
 @media screen and (max-width: 736px) {
   #header {
@@ -756,7 +753,7 @@ input[type="submit"].disabled, input[type="submit"]:disabled,
   margin: 0 auto;
   width: 55em;
 }
-#wrapper > header h2 {
+#wrapper > header h3 {
   border-bottom: solid 2px rgba(255, 255, 255, 0.125);
   font-size: 2em;
   margin-bottom: 0.8em;
@@ -802,7 +799,7 @@ input[type="submit"].disabled, input[type="submit"]:disabled,
  125%;
     margin-bottom: -2.5em;
   }
-  #wrapper > header h2 {
+  #wrapper > header h3 {
     font-size: 1.25em;
   }
   #wrapper > header p {
