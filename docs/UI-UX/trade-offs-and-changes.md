@@ -1,4 +1,4 @@
-## UI/UX Design Decisions (Trade Offs):
+## UI/UX Trade Offs & Design Changes:
 
 ### Using Boilerplate vs Starting From the Ground Up
 #### Why Use a Boilerplate?

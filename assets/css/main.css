@@ -165,6 +165,7 @@
 		font-family: Raleway, Helvetica, sans-serif;
 		letter-spacing: 0.1em;
 		font-size: 1.2em; /* 0.9*/
+		font-weight: 400;
 		margin: 0 0 1em 0;
 		text-transform: uppercase;
 	}
@@ -668,31 +669,31 @@ form > .fields > .field.quarter {
 		padding: 10em 0 4.75em 0 ;
 	}
 
-		#banner .inner {
-			margin: 0 auto;
-			width: 55em;
-		}
+	#banner .inner {
+		margin: 0 auto;
+		width: 55em;
+	}
 
-		#banner .logo {
-			transition: opacity 2s ease, transform 1s ease;
-			transform: translateY(0);
-			opacity: 1;
-			margin: 0 0 1.3em 0;
-		}
+	#banner .logo {
+		transition: opacity 2s ease, transform 1s ease;
+		transform: translateY(0);
+		opacity: 1;
+		margin: 0 0 1.3em 0;
+	}
 
-			#banner .logo .icon {
-				border-radius: 100%;
-				border: solid 2px rgba(255, 255, 255, 0.125);
-				cursor: default;
-				display: inline-block;
-				font-size: 2em;
-				height: 2.25em;
-				line-height: 2.25em;
-				text-align: center;
-				width: 2.25em;
-			}
+	#banner .logo .icon {
+		border-radius: 100%;
+		border: solid 2px rgba(255, 255, 255, 0.125);
+		cursor: default;
+		display: inline-block;
+		font-size: 2em;
+		height: 2.25em;
+		line-height: 2.25em;
+		text-align: center;
+		width: 2.25em;
+	}
 
-		@media screen and (max-width: 1280px) {
+		/* @media screen and (max-width: 1280px) {
 
 			#banner {
 				padding: 7em 0 8.25em 0 ;
@@ -704,7 +705,7 @@ form > .fields > .field.quarter {
 				margin-bottom: -6.5em;
 			}
 
-		}
+		}*/
 
 		@media screen and (max-width: 980px) {
 
