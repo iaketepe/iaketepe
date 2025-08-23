@@ -1,5 +1,23 @@
 /*! tailwindcss v4.1.12 | MIT License | https://tailwindcss.com */
 @import url("https://fonts.googleapis.com/css?family=Raleway:200,700|Source+Sans+Pro:300,600,300italic,600italic");
+.m-auto {
+  margin: auto;
+}
+.mx-auto {
+  margin-inline: auto;
+}
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
 .\!bg-transparent {
   background-color: transparent !important;
 }
@@ -140,7 +158,7 @@ h3 {
 h4 {
   color: #ffffff;
   font-family: Raleway, Helvetica, sans-serif;
-  font-weight: 700 !important;
+  font-weight: 400 !important;
   letter-spacing: 0.1em;
   font-size: 0.9em;
   margin: 0 0 1em 0;
@@ -892,10 +910,10 @@ input[type="submit"].disabled, input[type="submit"]:disabled,
 }
 #footer .inner form {
   margin: 0 3em 0 0;
-  width: calc(50% - 1.5em);
+  width: calc(100% - 1.5em);
 }
 #footer .inner .contact {
-  width: calc(50% - 1.5em);
+  width: calc(100% - 1.5em);
 }
 @media screen and (max-width: 980px) {
   #footer {
