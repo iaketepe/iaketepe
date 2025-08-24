@@ -6,9 +6,6 @@
 .flex-col {
   flex-direction: column;
 }
-.items-center {
-  align-items: center;
-}
 .\!bg-transparent {
   background-color: transparent !important;
 }
@@ -942,17 +939,6 @@ input[type="submit"].disabled, input[type="submit"]:disabled,
   }
   #footer .inner .contact {
     margin: 0 0 3em 0;
-  }
-}
-@media screen and (max-width: 480px) {
-  #footer .inner .copyright li {
-    border-left: 0;
-    display: block;
-    margin: 1em 0 0 0;
-    padding-left: 0;
-  }
-  #footer .inner .copyright li:first-child {
-    margin-top: 0;
   }
 }
 @media screen and (max-width: 360px) {

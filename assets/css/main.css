@@ -1184,21 +1184,6 @@ form > .fields > .field.quarter {
 
 	}
 
-	@media screen and (max-width: 480px) {
-
-		#footer .inner .copyright li {
-			border-left: 0;
-			display: block;
-			margin: 1em 0 0 0;
-			padding-left: 0;
-		}
-
-			#footer .inner .copyright li:first-child {
-				margin-top: 0;
-			}
-
-	}
-
 	@media screen and (max-width: 360px) {
 
 		#footer .inner {
