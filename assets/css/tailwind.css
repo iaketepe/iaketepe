@@ -3,6 +3,21 @@
 .flex {
   display: flex;
 }
+.h-screen {
+  height: 100vh;
+}
+.min-h-screen {
+  min-height: 100vh;
+}
+.w-full {
+  width: 100%;
+}
+.\!min-w-\[320px\] {
+  min-width: 320px !important;
+}
+.min-w-\[320px\] {
+  min-width: 320px;
+}
 .flex-col {
   flex-direction: column;
 }
@@ -18,11 +33,6 @@
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-}
-@media screen and (max-width: 480px) {
-  html, body {
-    min-width: 320px;
-  }
 }
 html {
   box-sizing: border-box;
@@ -546,7 +556,7 @@ input[type="submit"].disabled, input[type="submit"]:disabled,
   }
 }
 #banner {
-  padding: 10em 0 4.75em 0;
+  padding: 10em 2em 4.75em 2em;
 }
 #banner .inner {
   margin: 0 auto;
