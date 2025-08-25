@@ -1,5 +1,11 @@
 /*! tailwindcss v4.1.12 | MIT License | https://tailwindcss.com */
 @import url("https://fonts.googleapis.com/css?family=Raleway:200,700|Source+Sans+Pro:300,600,300italic,600italic");
+.m-auto {
+  margin: auto;
+}
+.mx-auto {
+  margin-inline: auto;
+}
 .flex {
   display: flex;
 }
@@ -12,8 +18,8 @@
 .w-full {
   width: 100%;
 }
-.\!min-w-\[320px\] {
-  min-width: 320px !important;
+.max-w-\[55em\] {
+  max-width: 55em;
 }
 .min-w-\[320px\] {
   min-width: 320px;
