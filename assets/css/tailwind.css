@@ -1,10 +1,14 @@
 /*! tailwindcss v4.1.12 | MIT License | https://tailwindcss.com */
 @import url("https://fonts.googleapis.com/css?family=Raleway:200,700|Source+Sans+Pro:300,600,300italic,600italic");
-.m-auto {
-  margin: auto;
+@layer properties;
+.mx-auto {
+  margin-inline: auto;
 }
 .flex {
   display: flex;
+}
+.h-full {
+  height: 100%;
 }
 .h-screen {
   height: 100vh;
@@ -24,13 +28,16 @@
 .flex-col {
   flex-direction: column;
 }
+.border-2 {
+  border-style: var(--tw-border-style);
+  border-width: 2px;
+}
 .\!bg-transparent {
   background-color: transparent !important;
 }
 *,
 *::before,
 *::after {
-  margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
@@ -183,40 +190,6 @@ h1.major, h2.major, h3.major, h4.major {
   }
   h4 {
     font-size: 0.8em;
-  }
-}
-form {
-  margin: 0 0 2em 0;
-}
-form > :last-child {
-  margin-bottom: 0;
-}
-form > .fields {
-  display: flex;
-  flex-wrap: wrap;
-  width: calc(100% + 3em);
-  margin: -1.5em 0 2em -1.5em;
-}
-form > .fields > .field {
-  flex: 0 0 auto;
-  padding: 1.5em 0 0 1.5em;
-  width: calc(100% - 1.5em);
-}
-form > .fields > .field.half {
-  width: calc(50% - 0.75em);
-}
-form > .fields > .field.third {
-  width: calc(33.3333% - 0.5em);
-}
-form > .fields > .field.quarter {
-  width: calc(25% - 0.375em);
-}
-@media screen and (max-width: 480px) {
-  form > .fields > .field,
-  form > .fields > .field.half,
-  form > .fields > .field.third,
-  form > .fields > .field.quarter {
-    width: calc(100% - 1.5em);
   }
 }
 label {
@@ -561,10 +534,6 @@ input[type="submit"].disabled, input[type="submit"]:disabled,
 #banner {
   padding: clamp(5em, 15vw, 10em) 2em clamp(1.75em, 8vw, 4.75em) 2em;
 }
-#banner .inner {
-  margin: 0 auto;
-  width: 55em;
-}
 #banner .logo {
   transition: opacity 2s ease, transform 1s ease;
   transform: translateY(0);
@@ -877,64 +846,19 @@ input[type="submit"].disabled, input[type="submit"]:disabled,
     padding: 2em 1.5em 0.1em 1.5em;
   }
 }
-#footer .inner {
-  padding: 5em 0 3em 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  width: 55em;
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
 }
-#footer .inner > * {
-  width: 100%;
-}
-#footer .inner form {
-  margin: 0 3em 0 0;
-  width: calc(100% - 1.5em);
-}
-#footer .inner .contact {
-  width: calc(100% - 1.5em);
-}
-@media screen and (max-width: 980px) {
-  #footer {
-    margin-top: -4.75em;
-    padding-top: 4.75em;
-  }
-  #footer .inner {
-    padding: 3em 3em 1em 3em;
-    display: block;
-    width: 100%;
-  }
-  #footer .inner form {
-    width: 100%;
-    margin: 0 0 4em 0;
-  }
-  #footer .inner .contact {
-    width: 100%;
-    margin: 0 0 4em 0;
-    display: flex;
-  }
-  #footer .inner .copyright {
-    margin: 4em 0 2em 0;
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-border-style: solid;
+    }
   }
 }
-@media screen and (max-width: 736px) {
-  #footer {
-    margin-top: -2.5em;
-    padding-top: 2.5em;
-  }
-  #footer .inner {
-    padding: 2em 2em 0.1em 2em;
-  }
-  #footer .inner form {
-    margin: 0 0 3em 0;
-  }
-  #footer .inner .contact {
-    margin: 0 0 3em 0;
-  }
-}
-@media screen and (max-width: 360px) {
-  #footer .inner {
-    padding: 2em 1.5em 0.1em 1.5em;
-  }
-}
+
+
+
+
