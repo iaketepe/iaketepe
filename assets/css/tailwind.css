@@ -1,6 +1,5 @@
 /*! tailwindcss v4.1.12 | MIT License | https://tailwindcss.com */
 @import url("https://fonts.googleapis.com/css?family=Raleway:200,700|Source+Sans+Pro:300,600,300italic,600italic");
-@layer properties;
 .mx-auto {
   margin-inline: auto;
 }
@@ -12,6 +11,9 @@
 }
 .h-screen {
   height: 100vh;
+}
+.max-h-\[150px\] {
+  max-height: 150px;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -28,9 +30,8 @@
 .flex-col {
   flex-direction: column;
 }
-.border-2 {
-  border-style: var(--tw-border-style);
-  border-width: 2px;
+.overflow-y-auto {
+  overflow-y: auto;
 }
 .\!bg-transparent {
   background-color: transparent !important;
@@ -38,7 +39,6 @@
 *,
 *::before,
 *::after {
-  padding: 0;
   border: 0;
   font-size: 100%;
   font: inherit;
@@ -199,7 +199,6 @@ label {
   font-size: 0.8em;
   font-weight: 700;
   letter-spacing: 0.1em;
-  margin: 0 0 0.7em 0;
   text-transform: uppercase;
 }
 input[type="text"],
@@ -844,18 +843,6 @@ input[type="submit"].disabled, input[type="submit"]:disabled,
 @media screen and (max-width: 360px) {
   .wrapper .inner {
     padding: 2em 1.5em 0.1em 1.5em;
-  }
-}
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
-@layer properties {
-  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
-    *, ::before, ::after, ::backdrop {
-      --tw-border-style: solid;
-    }
   }
 }
 
