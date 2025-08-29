@@ -500,23 +500,6 @@ input[type="submit"].disabled, input[type="submit"]:disabled,
 #banner {
   padding: clamp(5em, 15vw, 10em) 2em clamp(1.75em, 8vw, 4.75em) 2em;
 }
-#banner .logo {
-  transition: opacity 2s ease, transform 1s ease;
-  transform: translateY(0);
-  opacity: 1;
-  margin: 0 0 1.3em 0;
-}
-#banner .logo .icon {
-  border-radius: 100%;
-  border: solid 2px rgba(255, 255, 255, 0.125);
-  cursor: default;
-  display: inline-block;
-  font-size: 2em;
-  height: 2.25em;
-  line-height: 2.25em;
-  text-align: center;
-  width: 2.25em;
-}
 .wrapper {
   background-color: #2e3141;
   margin: 6.5em 0;
