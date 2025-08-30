@@ -549,7 +549,7 @@ input[type="submit"].disabled, input[type="submit"]:disabled,
   transform: scaleY(-1) scaleX(-1);
 }
 .wrapper .inner {
-  padding: 3em 0 1em 0;
+  padding: clamp(2em,1vw,3em) 1.5em clamp(.1em,1vw,1em) 1.5em;
   margin: 0 auto;
   width: 55em;
 }
@@ -622,7 +622,6 @@ input[type="submit"].disabled, input[type="submit"]:disabled,
     left: 0;
   }
   .wrapper .inner {
-    padding: 3em 3em 1em 3em;
     width: 100%;
   }
   .wrapper.spotlight .image {
@@ -647,12 +646,6 @@ input[type="submit"].disabled, input[type="submit"]:disabled,
     bottom: -2.5em;
     left: 0;
   }
-  .wrapper .inner {
-    padding: 2em 2em 0.1em 2em;
-  }
-  .wrapper.spotlight .inner {
-    align-items: flex-start;
-  }
   .wrapper.spotlight .image {
     width: 19em;
     margin: 0 1.75em 2em 0;
@@ -669,11 +662,6 @@ input[type="submit"].disabled, input[type="submit"]:disabled,
     margin: 0 0 1em 0 !important;
     max-width: 85%;
     width: 12em;
-  }
-}
-@media screen and (max-width: 360px) {
-  .wrapper .inner {
-    padding: 2em 1.5em 0.1em 1.5em;
   }
 }
 
