@@ -1,7 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const container = document.getElementById("lazy-loading");
+    /*const container = document.getElementById("lazy-loading");
     const skeleton = document.getElementById("skeleton");
     const AMT = document.getElementById("AMT");
 
@@ -19,5 +19,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     skeleton.remove();
-    AMT.classList.remove("hidden");
+    AMT.classList.remove("hidden");*/
 });
