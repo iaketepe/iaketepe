@@ -549,9 +549,10 @@ input[type="submit"].disabled, input[type="submit"]:disabled,
   transform: scaleY(-1) scaleX(-1);
 }
 .wrapper .inner {
-  padding: clamp(2em,1vw,3em) 1.5em clamp(.1em,1vw,1em) 1.5em;
+  padding: clamp(2em,1vw,3em) 1.5em clamp(0.1em,1vw,1em) 1.5em;
   margin: 0 auto;
-  width: 55em;
+  width: 100%;
+  max-width: 55em;
 }
 .wrapper.spotlight.style2 {
   background-color: #45558d;
@@ -620,16 +621,6 @@ input[type="submit"].disabled, input[type="submit"]:disabled,
   .wrapper:after {
     bottom: -4.75em;
     left: 0;
-  }
-  .wrapper .inner {
-    width: 100%;
-  }
-  .wrapper.spotlight .image {
-    margin: 0 2em 2em 0;
-    width: 32em;
-  }
-  .wrapper.spotlight:nth-child(2n - 1) .image {
-    margin: 0 0 2em 2em;
   }
 }
 @media screen and (max-width: 736px) {
