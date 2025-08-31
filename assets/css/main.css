@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway:200,700|Source+Sans+Pro:300,600,300italic,600italic");
+
 
 @tailwind base;
 @tailwind components;
@@ -51,13 +51,18 @@
 	}
 	
 	@layer theme {
+		/*body {
+			color: #ffffff;
+			font-family: "Source Sans Pro", Helvetica, sans-serif;
+		}*/
+
+	}
+	@layer base {
+
 		body {
 			color: #ffffff;
 			font-family: "Source Sans Pro", Helvetica, sans-serif;
 		}
-
-	}
-	@layer base {
 
 		form {
 			@apply flex flex-col gap-[0.5em];
@@ -461,12 +466,9 @@
 		}
 
 
-
-
-
 /* Footer */
 
 
 #footer {
-	padding: clamp(2em,1vw,3em) 1.5em clamp(0.1em,1vw,1em) 1.5em;
+	padding: clamp(2em,1vw,3em) 1.5em clamp(4em,1vw,5em) 1.5em;
 }

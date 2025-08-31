@@ -1,5 +1,4 @@
 /*! tailwindcss v4.1.12 | MIT License | https://tailwindcss.com */
-@import url("https://fonts.googleapis.com/css?family=Raleway:200,700|Source+Sans+Pro:300,600,300italic,600italic");
 .container {
   width: 100%;
 }
@@ -87,13 +86,12 @@ body, input, textarea {
 p {
   margin: 0 0 2em 0;
 }
-@layer theme {
+@layer theme;
+@layer base {
   body {
     color: #ffffff;
     font-family: "Source Sans Pro", Helvetica, sans-serif;
   }
-}
-@layer base {
   form {
     display: flex;
     flex-direction: column;
@@ -399,5 +397,5 @@ input[type="submit"]:active,
   }
 }
 #footer {
-  padding: clamp(2em,1vw,3em) 1.5em clamp(0.1em,1vw,1em) 1.5em;
+  padding: clamp(2em,1vw,3em) 1.5em clamp(4em,1vw,5em) 1.5em;
 }
