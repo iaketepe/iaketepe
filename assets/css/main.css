@@ -464,3 +464,9 @@
 
 
 
+/* Footer */
+
+
+#footer {
+	padding: clamp(2em,1vw,3em) 1.5em clamp(0.1em,1vw,1em) 1.5em;
+}

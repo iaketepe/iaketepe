@@ -398,8 +398,6 @@ input[type="submit"]:active,
     width: 12em;
   }
 }
-
-
-
-
-
+#footer {
+  padding: clamp(2em,1vw,3em) 1.5em clamp(0.1em,1vw,1em) 1.5em;
+}
