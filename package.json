@@ -8,7 +8,8 @@
   },
   "scripts": {
     "build:css": "postcss assets/css/main.css -o assets/css/tailwind.css",
-    "watch:css": "postcss assets/css/main.css -o assets/css/tailwind.css --watch"
+    "watch:css": "postcss assets/css/main.css -o assets/css/tailwind.css --watch",
+    "tailwatch:css": "npx @tailwindcss/cli -c ./tailwind.config.js -i ./assets/css/main.css -o ./assets/css/tailwind2.css --watch"
   },
   "repository": {
     "type": "git",
