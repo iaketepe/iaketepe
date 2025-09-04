@@ -306,9 +306,6 @@
 
 		.wrapper:before, .wrapper:after {
 			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%232e3141%3B' /%3E%3C/svg%3E");
-		}
-
-		.wrapper:before, .wrapper:after {
 			box-shadow: inset 0 -1px 0 0 #2e3141, 0 1px 0 0 #2e3141;
 		}
 
@@ -323,14 +320,12 @@
 		}
 
 		.wrapper:before {
-			left: 0;
 			top: -6.5em;
 		}
 
 		.wrapper:after {
 			transform: scaleY(-1);
 			bottom: -6.5em;
-			left: 0;
 		}
 
 		.wrapper.alt:before {
@@ -350,6 +345,7 @@
 			display: flex;
 			align-items: center;
 			flex-direction: row;
+			gap: 2em;
 		}
 
 		.wrapper.spotlight:nth-child(2n - 1) .inner {
@@ -390,14 +386,9 @@
 
 			.wrapper.spotlight .image {
 				border-radius: 100%;
-				margin: 0 3em 2em 0;
 				width: 100%;
 				max-width: clamp(12em,15em + 1vw,18em); /*15em*/
 				overflow: hidden;
-			}
-
-			.wrapper.spotlight:nth-child(2n - 1) .image {
-				margin: 0 0 2em 3em;
 			}
 
 
@@ -417,7 +408,6 @@
 
 				.wrapper:after {
 					bottom: -4.75em;
-					left: 0;
 				}
 
 		}
@@ -438,15 +428,6 @@
 
 				.wrapper:after {
 					bottom: -2.5em;
-					left: 0;
-				}
-
-				.wrapper.spotlight .image {
-					margin: 0 1.75em 2em 0;
-				}
-
-				.wrapper.spotlight:nth-child(2n - 1) .image {
-					margin: 0 0 2em 1.75em;
 				}
 
 		}
@@ -458,7 +439,6 @@
 			}
 
 			.wrapper.spotlight .image {
-				margin: 0 0 1em 0 !important;
 				max-width: 85%;
 				width: 12em;
 			}
