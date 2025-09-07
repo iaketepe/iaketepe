@@ -26,17 +26,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     const projectNames = ["Hangman PHP","Stand Up Timer","Wine Analysis","Perviewwaves"];
+    const projectLinks = ["https://hangman-3x9r.onrender.com/","https://github.com/iaketepe/Stand-Up-Timer/tree/master","https://analysing-red-wine.streamlit.app/","https://perviewwaves.netlify.app/"];
     const projectDescriptions = ["A hangman game, coded in PHP, HTML, JS and CSS, as well as SQL for the database","A timer that helps people stand up regularly after sitting for long periods of time","A data analysis project turned into a data app, using streamlit","A UI prototype designed to model the website of a Psychology Clinic"];
 
 
 
-function createProject(projectHeader, projectImg, projectDescription) {
+function createProject(projectHeader,projectLink, projectImg, projectDescription) {
     const projectsList = document.createElement("projectsList");
 
     const article = document.createElement("article");
 
     const link = document.createElement("a");
-    link.href = "#";
+    link.href = projectLink;
     link.className = "image";
 
     const img = document.createElement("img");
@@ -62,8 +63,6 @@ function createProject(projectHeader, projectImg, projectDescription) {
 
 
 for (let index = 0; index < projectNames.length; index++) {
-    const article = createProject(projectNames[index],"images/pic04.jpg",projectDescriptions[index]);
+    const article = createProject(projectNames[index],projectLinks[index],"images/pic04.jpg",projectDescriptions[index]);
     projectsList.appendChild(article);
 }
-
-
