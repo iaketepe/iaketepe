@@ -1,4 +1,7 @@
 /*! tailwindcss v4.1.12 | MIT License | https://tailwindcss.com */
+.static {
+  position: static;
+}
 .container {
   width: 100%;
 }
@@ -31,6 +34,9 @@
 }
 .min-w-\[320px\] {
   min-width: 320px;
+}
+.flex-col {
+  flex-direction: column;
 }
 .items-center {
   align-items: center;
