@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
 
         const formData = new FormData(form);
-        formData.append('token', token); //formdata.append('cf-turnstile-response', token);
+        //formData.append('token', token); //formdata.append('cf-turnstile-response', token);
         const formBody = Object.fromEntries(formData.entries());
 
 
