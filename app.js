@@ -10,6 +10,8 @@ app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
 
+
+
 app.post('/submit', async (req, res) => {
   const { name, email, message, token } = req.body;
 
@@ -18,7 +20,7 @@ app.post('/submit', async (req, res) => {
   // is data validated and correct?
     //name and the message are not null
     //email is valid email
-  //validateEmailContent(name, email, message);
+  validateEmailContent(name, email, message);
   // verify submission via node mailer
   // send submission via node mailer
   //verifyEmail();
@@ -49,7 +51,10 @@ async function validateTurnstile(token) {
 }
 
 function validateEmailContent(name, email, message) {
-  // const validator = require("validator");
+  if (!name || !name.trim()) throw new Error("Name is required");
+  if (!email || !/\S+@\S+\.\S+/.test(email)) throw new Error("Invalid email");
+  if (!message || !message.trim()) throw new Error("Message is required");
+  return true;
 }
 
 function verifyEmail() {
