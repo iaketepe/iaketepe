@@ -5,14 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
-        const token = await new Promise(resolve => {
-            turnstile.render('.cf-turnstile', {
-                sitekey: 'YOUR_SITE_KEY',
-                callback: (token) => resolve(token)
-            });
-        });
-
-
         const formData = new FormData(form);
         formData.append('token', token); //formdata.append('cf-turnstile-response', token);
         const formBody = Object.fromEntries(formData.entries());

@@ -35,7 +35,7 @@ async function validateTurnstile(token) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                secret: process.env.TEST_KEY, //process.env.CFTOKEN_SECRET_KEY
+                secret: process.env.CFTOKEN_SECRET_KEY, //process.env.CFTOKEN_SECRET_KEY
                 response: token,
             })
         });
