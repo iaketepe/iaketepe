@@ -1,26 +1,24 @@
 //const { create } = require("domain");
 
 document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById("contact-form");
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-    /*const container = document.getElementById("lazy-loading");
-    const skeleton = document.getElementById("skeleton");
-    const AMT = document.getElementById("AMT");
-
-
-
-    const AboutMeText = ["I'm a systems-based thinker with experience across information technology, data science, and enterprise architecture. Whether I'm streamlining workflows, writing documentation, or designing software and data/information systems to support future objectives, I adapt to different roles and challenges to keep things running smoothly.",
-        "Currently, I'm focused on deepening my understanding of how software systems communicate and handle data—working with backend services, APIs, and data pipelines—to build effective, connected solutions.",
-        "Outside of work, I enjoy reading, discovering new music, and diving into stories—whether they come from books, people, or data."];
-
-    AboutMeText.forEach(text => {
-        const p = document.createElement("p");
-        p.textContent = text;
-        AMT.appendChild(p);
-      });
+        const formData = new FormData(form);
+        //formData.append('token', token); //formdata.append('cf-turnstile-response', token);
+        const formBody = Object.fromEntries(formData.entries());
 
 
-    skeleton.remove();
-    AMT.classList.remove("hidden");*/
+        const res = await fetch('/submit', {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formBody)
+        });
+
+        const data = await res.json();
+        console.log(data);
+    })
 
 });
 

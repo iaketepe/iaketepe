@@ -14,6 +14,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="assets/css/tailwind2.css" />
 		<!-- <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js" defer></script> -->
+		<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 	</head>
 	<body class="min-h-screen h-screen min-w-[320px]">
 
@@ -92,21 +93,23 @@
 						<a href="" class="icon brands fa-linkedin"></a>
 					</div> -->
 					<!--<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p> -->
-					<form action="">
+					<form id="contact-form" class="">
 						<div class="">
 							<label for="name">Name</label>
-							<input type="text" name="name" id="name" />
+							<input type="text" name="name" id="name" required/>
 						</div>
 						<div class="">
 							<label for="email">Email</label>
-							<input type="email" name="email" id="email" />
+							<input type="email" name="email" id="email" required/>
 						</div>
 						<div class="">
 							<label for="message">Message</label>
-							<textarea name="message" id="message" rows="4"></textarea>
+							<textarea name="message" id="message" rows="4" required></textarea>
 						</div>
-						<div class="">
-							<input type="submit" value="Send Message" />
+						
+						<div class="flex flex-col items-center">
+							<div class="cf-turnstile overflow-x-hidden" data-sitekey="0x4AAAAAAB0I7kHdhrUvW2H6" data-response-field="token"></div>
+							<input type="submit" value="Send Message"/>
 						</div>
 					</form>
 				</div>
