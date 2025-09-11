@@ -1,10 +1,13 @@
 - Users can navigate the site efficiently
     - adding in icons, may improve site navigation with little overhead
     - add in a menu, may allow for swift section changes
+        - side panel for desktop
+        - topdown for mobile
 - Users can access or view my skills, experiences and projects
     - adding in sections, for each type of information will let me showcase this information
     - implementing components like carousels, may simplify viewing of section content
     - Information that is too long, should either be reduced or togglable
+        - Using the original Boilerplate as a reference
 - Users can access projects through at least one of the following:
     - Using services like netlify, github pages or render will allow me to deploy my site for public access
     - GitHub repositories / Source code
