@@ -10,21 +10,24 @@ app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
 
-
+const nodemailer = require("nodemailer");
 
 app.post('/submit', async (req, res) => {
   const { name, email, message, token } = req.body;
+  //validation (cloudflare and email content)
 
-  // is cloudflare check done?
-  validateTurnstile(token);
-  // is data validated and correct?
-    //name and the message are not null
-    //email is valid email
-  validateEmailContent(name, email, message);
-  // verify submission via node mailer
-  // send submission via node mailer
-  //verifyEmail();
-  //sendEmail();
+  try {
+    await validateTurnstile(token);
+    validateEmailContent(name, email, message);
+    //email submission process
+    const carrier = initializeEmailCarrier();
+    await verifyEmailConnection(carrier);
+    await sendEmail(name, email, message, carrier);
+  } catch (err) {
+    console.error(err);
+    res.status(400).json({ error: err.message });
+  }
+
 })
 
 
@@ -43,10 +46,14 @@ async function validateTurnstile(token) {
         });
 
         const result = await response.json();
+        if (!result.success) {
+          throw new Error("Turnstile verification failed");
+        }
         return result;
-    } catch (error) {
-        console.error('Turnstile validation error:', error);
-        return { success: false, 'error-codes': ['internal-error'] };
+    } catch (err) {
+      // 3️⃣ Network or unexpected error
+      console.error("Turnstile validation error: ", err);
+      throw new Error("Failed Cloudflare Turnstile CAPTCHA");
     }
 }
 
@@ -57,10 +64,38 @@ function validateEmailContent(name, email, message) {
   return true;
 }
 
-function verifyEmail() {
+function initializeEmailCarrier() {
+  const transporter = nodemailer.createTransport({
+    service: process.env.SERVICE,
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+  });
 
+  return transporter;
 }
 
-function sendEmail() {
+async function verifyEmailConnection(carrier) {
+  try {
+    await carrier.verify();
+  } catch (err) {
+    console.error("Host connection failed. ", err);
+    throw new Error("Could not connect to destination.");
+  }
+}
 
+async function sendEmail(name, email, message, carrier) {
+  try {
+      const emailInTransit = await carrier.sendMail({
+      from: `"${name}" <${process.env.SMTP_USER}>`,
+      to: process.env.SMTP_USER,
+      replyTo: email,
+      subject: `${name} sent you an email`,
+      text: message
+    });
+  } catch (err) {
+    console.error("Email couldn't be sent", err);
+    throw new Error("Email couldn't be sent");
+  }
 }
