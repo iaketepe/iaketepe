@@ -16,6 +16,7 @@ const nodemailer = require("nodemailer");
 app.post('/submit', async (req, res) => {
   const { name, email, message, token } = req.body;
   //validation (cloudflare and email content)
+  console.log(name, email, message, token);
 
   try {
     await validateTurnstile(token);
