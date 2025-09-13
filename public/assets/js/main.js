@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const formData = new FormData(form);
         //formData.append('token', token); //formdata.append('cf-turnstile-response', token);
         const formBody = Object.fromEntries(formData.entries());
+        //const token = formData.get('token');
+        console.log(formBody);
+        //console.log(formData.get('token'));
 
 
         const res = await fetch('/submit', {

@@ -14,7 +14,7 @@ app.listen(port, () => {
 const nodemailer = require("nodemailer");
 
 app.post('/submit', async (req, res) => {
-  const { name, email, message, token } = req.body;
+  const { name, email, message, 'cf-turnstile-response': token } = req.body;
   //validation (cloudflare and email content)
   console.log(name, email, message, token);
 
