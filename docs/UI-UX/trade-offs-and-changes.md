@@ -28,6 +28,7 @@ Decision: I've decided to work with a boilerplate.
     - Depreciated vendor prefixes for common css attributes
     - Outdated CSS Grid implementation
     - Legacy row system implementation
+- Other than the CSS issues I mentioned previously, there also SCSS issues on top of that. It seems like the boilerplate was built from those SCSS files into one main.css file. So something I have to consider is whether or not I should remove the SCSS or try to modify it and then build from them as well.
 
 
 ## Handling Site Reliability
