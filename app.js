@@ -5,6 +5,7 @@ const port = 3000
 
 // Serve static files from 'public' folder
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.json());
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
@@ -23,6 +24,8 @@ app.post('/submit', async (req, res) => {
     const carrier = initializeEmailCarrier();
     await verifyEmailConnection(carrier);
     await sendEmail(name, email, message, carrier);
+
+    res.status(200).json({ success: true });
   } catch (err) {
     console.error(err);
     res.status(400).json({ error: err.message });
