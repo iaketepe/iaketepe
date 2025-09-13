@@ -37,15 +37,19 @@ app.post('/submit', async (req, res) => {
 
 async function validateTurnstile(token) {
     try {
+        const params = new URLSearchParams();
+        params.append('secret', process.env.CFTOKEN_SECRET_KEY);
+        params.append('response', token);
         const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/x-www-form-urlencoded'
             },
-            body: JSON.stringify({
+            body: params.toString()
+            /*body: JSON.stringify({
                 secret: process.env.CFTOKEN_SECRET_KEY, //process.env.CFTOKEN_SECRET_KEY
                 response: token,
-            })
+            })*/
         });
 
         const result = await response.json();
