@@ -30,3 +30,10 @@ Decision: I've decided to work with a boilerplate.
     - Legacy row system implementation
 
 
+## Handling Site Reliability
+### Adding Spam Protection
+Since I was considering adding a contact form, I would need to deal with the possibility of spam. To combat this, I wanted to implement bot detection software. At first, when it came to trying to implement this, I believed that I should do this through Google Captcha as that was the only technology that I knew could work in this context.
+### Pros
+- Google Captcha is a well known form of bot detection software
+- It's very simple to use, and while most people understand how to interact with it
+### Cons
