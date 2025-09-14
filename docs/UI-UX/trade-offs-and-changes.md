@@ -30,10 +30,16 @@ Decision: I've decided to work with a boilerplate.
     - Legacy row system implementation
 - Other than the CSS issues I mentioned previously, there also SCSS issues on top of that. It seems like the boilerplate was built from those SCSS files into one main.css file. So something I have to consider is whether or not I should remove the SCSS or try to modify it and then build from them as well.
 
+## Deploying the Site
+### Deploying before Completion
+- When I was planning development, I wanted to start by completing the core aspects of the site first. Afterwards, I would deploy the site, adding more later on. However, as I actually started developing, I realized that I had already made great strides on the project. So it was better to showcase what I had done, gradually adding changes over time. Not only does this allow me to quickly present my work and thought process, it lets my workflow mimic actual development.
 
 ## Handling Site Reliability
 ### Adding Spam Protection
 Since I was considering adding a contact form, I would need to deal with the possibility of spam. To combat this, I wanted to implement bot detection software. At first, when it came to trying to implement this, I believed that I should do this through Google Captcha as that was the only technology that I knew could work in this context.
+
+
+
 ### Pros
 - Google Captcha is a well known form of bot detection software
 - It's very simple to use, and while most people understand how to interact with it
