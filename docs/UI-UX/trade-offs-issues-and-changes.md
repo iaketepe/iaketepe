@@ -1,4 +1,4 @@
-# UI/UX Trade Offs & Design Changes:
+# UI/UX Trade Offs, Issues & Design Changes:
 
 ## Using Boilerplate vs Starting From the Ground Up
 
@@ -34,13 +34,35 @@ Decision: I've decided to work with a boilerplate.
 ### Deploying before Completion
 - When I was planning development, I wanted to start by completing the core aspects of the site first. Afterwards, I would deploy the site, adding more later on. However, as I actually started developing, I realized that I had already made great strides on the project. So it was better to showcase what I had done, gradually adding changes over time. Not only does this allow me to quickly present my work and thought process, it lets my workflow mimic actual development.
 
+### Handling Email Submissions
+- When it came to handling email submissions, I wanted to see if I could implement a contact form. It was possible to just remove the contact form segment, replace it with a :mailto hyperlink. However, I believed that actually realizing the contact form would be insightful.
+#### Nodemailer vs Cloud Delivery Service (Postmark, etc)
+  - The next issue came down to how I was planning on implementing the actual connection. I had two options:
+    - Implement the submission myself via nodemailer
+    - Try to find a cloud delivery service to connect to.
+      - Postmark
+      - SendGrid
+      - MailGun
+      - MessageBird (formerly SparkPost)
+      - MailChimp Transactional (formerly Mandrill)
+  - After doing some research, I believed the best choice was to use nodemailer. Most of the cloud services I looked at had no long-lasting free option. Those that did have a very low message sending limit compared to the results of just creating a completely seperate email and relying on the email provider's built-in message limits.
+  - That said, as I improve the project over time, I may circle back to this idea.
+#### Notable Bugs
+- Dealing with FormBody Data being undefined
+  - captcha failed because there was no token being sent from the form.
+  - [removed overriding attributes from the tokens html element, ammended related code](https://github.com/iaketepe/iaketepe/commit/ae755cedbf38bfdc7004069dc64fbcf987e1b4ce).
+- Invalid login credentials despite valid SMTP credentials
+  - [explicitly added nodemailer's secure: true line to pass implicit provider rejection during submission](https://github.com/iaketepe/iaketepe/commit/4358823ea6a3b6066ad93476bf376b2e7f604662).
+
 ## Handling Site Reliability
 ### Adding Spam Protection
 Since I was considering adding a contact form, I would need to deal with the possibility of spam. To combat this, I wanted to implement bot detection software. At first, when it came to trying to implement this, I believed that I should do this through Google Captcha as that was the only technology that I knew could work in this context.
-
-
 
 ### Pros
 - Google Captcha is a well known form of bot detection software
 - It's very simple to use, and while most people understand how to interact with it
 ### Cons
+
+
+
+
