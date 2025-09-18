@@ -26,3 +26,9 @@ Goal: To create a portfolio website to showcase myself to others (employers, cli
 - HTML
 - CSS
 - JavaScript
+
+## Other Technologies
+- Node.js
+- Express.js
+- TailwindCSS
+- Vercel
