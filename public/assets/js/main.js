@@ -24,13 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     const carouselButtons = document.getElementById("carousel-buttons");
-    const buttons = carouselButtons.querySelectorAll("a");
+    const buttons = carouselButtons.querySelectorAll("button");
 
     buttons.forEach(button => {
         button.addEventListener("click", (e) => {
             e.preventDefault();
 
-            const targetId = button.getAttribute("href");
+            const targetId = button.getAttribute("id");
             const targetSlide = document.querySelector(targetId);
 
             targetSlide.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
