@@ -7,7 +7,7 @@
 - Using Templates mimics real world work
   - Companies/Clients will have their own aesthetic and basic web design. Working with boilerplates is similar to that.
   - Working with boilerplate would allow me to work with foreign ui; dealing with systems that I wouldn't initially be familiar with, learn what makes it work, and improve it while retaining what made the design good in the first place.
-- Generative tools (AI) can make it easier to start from scratch, narrowing the percieved gap in skill.
+- Generative tools (AI) can make it easier to start from scratch, narrowing the perceived gap in skill.
 ### Cons
 - Using a boilerplate, means that I wouldn't have started from the ground up.
 ### Result
@@ -29,6 +29,8 @@ Decision: I've decided to work with a boilerplate.
     - Outdated CSS Grid implementation
     - Legacy row system implementation
 - Other than the CSS issues I mentioned previously, there also SCSS issues on top of that. It seems like the boilerplate was built from those SCSS files into one main.css file. So something I have to consider is whether or not I should remove the SCSS or try to modify it and then build from them as well.
+
+### Transforming the Design
 
 ## Deploying the Site
 ### Deploying before Completion
