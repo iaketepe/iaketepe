@@ -25,7 +25,7 @@ Decision: I've decided to work with a boilerplate.
 - The boilerplate I chose appears to be roughly 10-15 years old, containing vast amounts of legacy code
   - Issues include:
     - Over 4000+ lines of code in a single css file alone.
-    - Depreciated vendor prefixes for common css attributes
+    - Depreciated vendor prefixes for common css properties
     - Outdated CSS Grid implementation
     - Legacy row system implementation
 - Other than the CSS issues I mentioned previously, there also SCSS issues on top of that. It seems like the boilerplate was built from those SCSS files into one main.css file. So something I have to consider is whether or not I should remove the SCSS or try to modify it and then build from them as well.
@@ -56,13 +56,27 @@ Decision: I've decided to work with a boilerplate.
 
 ## Handling Site Reliability
 ### Adding Spam Protection
-Since I was considering adding a contact form, I would need to deal with the possibility of spam. To combat this, I wanted to implement bot detection software. At first, when it came to trying to implement this, I believed that I should do this through Google Captcha as that was the only technology that I knew could work in this context.
+Since I was adding a contact form, I needed to deal with the possibility of spam. To combat this, I wanted to implement bot detection software. At first, when it came to trying to implement this, I believed that I should do this through Google Captcha as that was the only technology that I knew could work in this context. However after doing some research, I realized that there may or may not be GDPR compliance issues with Google Captcha as well as Google Fonts. Even though GDPR compliance specifically for the EU, since all nations are connected, trying to look for alternatives that work in line overseas will align well overall. This brings me to the other option, Cloudflare Turnstile.
 
-### Pros
+#### [Google Captcha](https://cloud.google.com/security/products/recaptcha?hl=en)
+##### Pros
 - Google Captcha is a well known form of bot detection software
 - It's very simple to use, and while most people understand how to interact with it
-### Cons
+##### Cons
+- May or may not be GDPR compliant
+- - Will take time to implement
 
+#### [Cloudflare Turnstile](https://www.cloudflare.com/en-ca/application-services/products/turnstile/)
+##### Pros
+- Cloudflare Turnstile is another form of bot detection software developed by a well known company
+- Requires less effort to do, no user puzzles to solve
+- It's very simple to use, most people who have dealt with Google Captcha will have a similar time with it
+- [Aligned Policies with GDPR requirements](https://www.cloudflare.com/trust-hub/gdpr/)
+- EU-US Data Privacy Framework Certified
+##### Cons
+- Will take time to implement
 
+##### Result
+Overall, I believed Cloudflare's Turnstile was the better decision.
 
 
