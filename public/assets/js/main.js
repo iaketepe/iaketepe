@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const buttons = carouselButtons.querySelectorAll("button");
 
     buttons.forEach(button => {
-        button.addEventListener("click", (e) => {
-            e.preventDefault();
+        button.addEventListener("click", () => {
+            //e.preventDefault();
 
             const targetId = button.getAttribute("id");
             const targetSlide = document.querySelector(targetId);

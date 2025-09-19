@@ -32,7 +32,6 @@
     "tailwindcss": "^4.1.12"
   },
   "devDependencies": {
-    "daisyui": "^5.1.12",
     "postcss-cli": "^11.0.1"
   }
 }
