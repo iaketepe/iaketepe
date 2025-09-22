@@ -397,18 +397,29 @@
 		scroll-snap-align: start;
 		}
 
+		.carousel-inner {
+			display: inline-flex;
+			overflow-x: auto;
+			scroll-snap-type: x mandatory;
+			scrollbar-width: none;
+			@media (prefers-reduced-motion: no-preference) {
+				scroll-behavior: smooth;
+			}
+			&::-webkit-scrollbar {
+				display: none;
+			}
+		}
+
 
 		.carousel {
-		display: inline-flex;
-		overflow-x: scroll;
-		scroll-snap-type: x mandatory;
-		scrollbar-width: none;
-		@media (prefers-reduced-motion: no-preference) {
-			scroll-behavior: smooth;
-		}
-		&::-webkit-scrollbar {
-			display: none;
-		}
+			display: inline-flex;
+			overflow-x: scroll;
+			@media (prefers-reduced-motion: no-preference) {
+				scroll-behavior: smooth;
+			}
+			&::-webkit-scrollbar {
+				display: none;
+			}
 		}
 
 		.carousel-button {

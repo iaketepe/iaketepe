@@ -8,9 +8,6 @@
 .static {
   position: static;
 }
-.top-1\/2 {
-  top: calc(1/2 * 100%);
-}
 .mx-auto {
   margin-inline: auto;
 }
@@ -335,11 +332,21 @@ input[type="submit"]:active,	input[type="button"]:active,	button:active,	.button
   flex: none;
   scroll-snap-align: start;
 }
+.carousel-inner {
+  display: inline-flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
 .carousel {
   display: inline-flex;
   overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
   @media (prefers-reduced-motion: no-preference) {
     scroll-behavior: smooth;
   }

@@ -23,14 +23,54 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(data);
     })
 
+});
+
+    /*
+    const carousels = document.querySelectorAll(".carousel");
+
+    carousels.forEach(carousel => {
+        const slides = carousel.querySelectorAll(".carousel-item");
+        const buttons = carousel.querySelectorAll(".carousel-button");
+
+        let currentIndex = 0;
+        const totalSlides = slides.length;
+
+        function moveToSlide(action) {
+            if (action === 'prev') {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            } else if (action === 'next') {
+                currentIndex = (currentIndex + 1) % totalSlides;
+            }
+
+            slides[currentIndex].scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'start'
+            });
+        }
+
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                //e.preventDefault();
+
+                const action = button.getAttribute("data-action");
+                moveToSlide(action);
+
+            });
+        });
+
+    });*/
+
     const carouselButtons = document.getElementById("carousel-buttons");
     const buttons = carouselButtons.querySelectorAll("button");
+
+    //let SkillsSlide = 1;
 
     buttons.forEach(button => {
         button.addEventListener("click", () => {
             //e.preventDefault();
 
-            const targetId = button.getAttribute("id");
+            const targetId = button.getAttribute("data-target");
             const targetSlide = document.querySelector(targetId);
 
             targetSlide.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
@@ -39,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     
 
-});
+
 
 
     const projectNames = ["Hangman PHP","Stand Up Timer","Wine Analysis","Perviewwaves"];
