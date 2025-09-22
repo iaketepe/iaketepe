@@ -8,6 +8,9 @@
 .static {
   position: static;
 }
+.top-2\/5 {
+  top: calc(2/5 * 100%);
+}
 .mx-auto {
   margin-inline: auto;
 }
@@ -335,6 +338,7 @@ input[type="submit"]:active,	input[type="button"]:active,	button:active,	.button
 .carousel-inner {
   display: inline-flex;
   overflow-x: auto;
+  cursor: grab;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   @media (prefers-reduced-motion: no-preference) {
