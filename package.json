@@ -8,8 +8,7 @@
   },
   "scripts": {
     "build:css": "postcss public/assets/css/main.css -o public/assets/css/tailwind.css",
-    "watch:css": "postcss public/assets/css/main.css -o public/assets/css/tailwind.css --watch",
-    "tailwatch:css": "npx @tailwindcss/cli -i ./public/assets/css/main.css -o ./public/assets/css/tailwind2.css --watch"
+    "watch:css": "npx @tailwindcss/cli -i ./public/assets/css/main.css -o ./public/assets/css/tailwind2.css --watch"
   },
   "repository": {
     "type": "git",
@@ -28,8 +27,5 @@
     "express": "^5.1.0",
     "nodemailer": "^7.0.6",
     "tailwindcss": "^4.1.12"
-  },
-  "devDependencies": {
-    "postcss-cli": "^11.0.1"
   }
 }
