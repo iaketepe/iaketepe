@@ -426,6 +426,14 @@
 
 		.carousel-button {
 			box-shadow: inset 0 0 0 0px rgba(255, 255, 255, 0.125);
+			opacity: 50%;
+			transition: opacity 0.3s ease;
+			z-index: 1;
+		}
+
+		.carousel-button:hover {
+			opacity: 100%;
+			transform: scale(1.05); /* optional: slight grow */
 		}
 
 
