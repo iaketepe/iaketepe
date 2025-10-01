@@ -112,7 +112,6 @@
 
 /* Form */
 
-
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
@@ -128,29 +127,17 @@
 		width: 100%;
 	}
 
-		input[type="text"]:invalid,
-		input[type="password"]:invalid,
-		input[type="email"]:invalid,
-		textarea:invalid {
-			box-shadow: none;
-		}
-
-		input[type="text"]:focus,
-		input[type="password"]:focus,
-		input[type="email"]:focus,
-		textarea:focus {
-			border-color: #5b6ba6;
-		}
-
-	input[type="text"],
-	input[type="password"],
-	input[type="email"] {
-		height: 2.75em;
+	input[type="text"]:focus,
+	input[type="password"]:focus,
+	input[type="email"]:focus,
+	textarea:focus {
+		border-color: #5b6ba6;
 	}
 
 	input[type="text"],
 	input[type="password"],
 	input[type="email"] {
+		height: 2.75em;
 		padding: 0 1em;
 	}
 
