@@ -331,6 +331,7 @@ input[type="text"],	input[type="password"],	input[type="email"] {
   padding: 0 1em;
 }
 textarea {
+  min-height: 3.25em;
   padding: 0.75em 1em;
 }
 button {

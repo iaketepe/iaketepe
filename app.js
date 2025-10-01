@@ -8,7 +8,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+  console.log(`Server running at http://localhost:${port}`); //127.0.0.1
 });
 
 const nodemailer = require("nodemailer");
