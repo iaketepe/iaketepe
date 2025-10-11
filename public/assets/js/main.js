@@ -61,22 +61,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });*/
 
-    const carouselButtons = document.getElementById("carousel-buttons");
-    const buttons = carouselButtons.querySelectorAll("button");
+
+let currentIndex = 1;
+const totalSlides = 4; // count slides
+
+function handleNext() {
+    if (currentIndex < totalSlides) {
+        currentIndex++; // just increment
+        handleSliding();
+    }
+}
+
+function handlePrev() {
+    if (currentIndex > 1) {
+        currentIndex--; // just decrement
+        handleSliding();
+    }
+}
+
+function handleSliding() {
+    const targetSlide = document.querySelector("#slide" + currentIndex);
+    targetSlide.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+}
+
+    //const carouselButtons = document.getElementById("carousel-buttons");
+    //const buttons = carouselButtons.querySelectorAll("button");
 
     //let SkillsSlide = 1;
-
+/*
     buttons.forEach(button => {
         button.addEventListener("click", () => {
             //e.preventDefault();
 
-            const targetId = button.getAttribute("data-target");
+            const targetId = button.getAttribute("data-target"); //#SlideX
             const targetSlide = document.querySelector(targetId);
 
             targetSlide.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
 
         });
-    })
+    })*/
     
 
 
