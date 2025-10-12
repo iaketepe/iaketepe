@@ -25,85 +25,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-    /*
-    const carousels = document.querySelectorAll(".carousel");
 
-    carousels.forEach(carousel => {
-        const slides = carousel.querySelectorAll(".carousel-item");
-        const buttons = carousel.querySelectorAll(".carousel-button");
+let carousel = { "slideID": "#domain_slide", "currentIndex" : 1, "totalSlides": 4};
+let carousel2 = { "slideID": "#experience_slide","currentIndex" : 1, "totalSlides": 4};
+const arr = [carousel, carousel2];
 
-        let currentIndex = 0;
-        const totalSlides = slides.length;
-
-        function moveToSlide(action) {
-            if (action === 'prev') {
-                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-            } else if (action === 'next') {
-                currentIndex = (currentIndex + 1) % totalSlides;
-            }
-
-            slides[currentIndex].scrollIntoView({
-                behavior: 'smooth',
-                block: 'nearest',
-                inline: 'start'
-            });
-        }
-
-        buttons.forEach(button => {
-            button.addEventListener("click", () => {
-                //e.preventDefault();
-
-                const action = button.getAttribute("data-action");
-                moveToSlide(action);
-
-            });
-        });
-
-    });*/
-
-
-let currentIndex = 1;
-const totalSlides = 4; // count slides
-
-function handleNext() {
-    if (currentIndex < totalSlides) {
-        currentIndex++; // just increment
-        handleSliding();
+function handleNext(val) {
+    const carouselObj = arr[val] ?? arr[0];
+    if (carouselObj.currentIndex < carouselObj.totalSlides) {
+        carouselObj.currentIndex++; // just increment
+        handleSliding(carouselObj);
     }
 }
 
-function handlePrev() {
-    if (currentIndex > 1) {
-        currentIndex--; // just decrement
-        handleSliding();
+function handlePrev(val) {
+    const carouselObj = arr[val] ?? arr[0];
+    if (carouselObj.currentIndex > 1) {
+        carouselObj.currentIndex--; // just decrement
+        handleSliding(carouselObj);
     }
 }
 
-function handleSliding() {
-    const targetSlide = document.querySelector("#slide" + currentIndex);
+function handleSliding(carouselObj) { 
+    const targetSlide = document.querySelector(carouselObj.slideID + carouselObj.currentIndex); //"#slide"
     targetSlide.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
 }
-
-    //const carouselButtons = document.getElementById("carousel-buttons");
-    //const buttons = carouselButtons.querySelectorAll("button");
-
-    //let SkillsSlide = 1;
-/*
-    buttons.forEach(button => {
-        button.addEventListener("click", () => {
-            //e.preventDefault();
-
-            const targetId = button.getAttribute("data-target"); //#SlideX
-            const targetSlide = document.querySelector(targetId);
-
-            targetSlide.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
-
-        });
-    })*/
-    
-
-
-
 
     const projectNames = ["Hangman PHP","Stand Up Timer","Wine Analysis","Perviewwaves"];
     const projectLinks = ["https://hangman-3x9r.onrender.com/","https://github.com/iaketepe/Stand-Up-Timer/tree/master","https://analysing-red-wine.streamlit.app/","https://perviewwaves.netlify.app/"];

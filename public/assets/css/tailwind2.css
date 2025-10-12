@@ -516,7 +516,7 @@ input[type="submit"]:active,	input[type="button"]:active,	.button:active {
 }
 .carousel {
   display: inline-flex;
-  overflow-x: scroll;
+  overflow-x: hidden;
   @media (prefers-reduced-motion: no-preference) {
     scroll-behavior: smooth;
   }
