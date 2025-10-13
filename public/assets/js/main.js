@@ -47,8 +47,16 @@ function handlePrev(val) {
 }
 
 function handleSliding(carouselObj) { 
-    const targetSlide = document.querySelector(carouselObj.slideID + carouselObj.currentIndex); //"#slide"
-    targetSlide.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+    const container = document.querySelector(".carousel-inner");
+    const targetSlide = document.querySelector(`${carouselObj.slideID}${carouselObj.currentIndex}`); //"#slide" carouselObj.slideID + carouselObj.currentIndex
+
+    requestAnimationFrame(() => {
+        container.scrollTo({
+            left: targetSlide.offsetLeft,
+            behavior: 'smooth'
+        });
+    });
+
 }
 
     const projectNames = ["Hangman PHP","Stand Up Timer","Wine Analysis","Perviewwaves"];
