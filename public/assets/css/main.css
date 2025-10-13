@@ -484,7 +484,7 @@
 
 			.wrapper.spotlight .image {
 				margin: 0 auto;
-				width: 100%;
+				width: 96%;
 				aspect-ratio: 2 / 1;
 				border-radius: .75rem;
 			}
