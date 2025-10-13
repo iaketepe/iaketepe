@@ -38,7 +38,7 @@
 
 /* Type */
 
-	body, input, textarea {
+	body, input, textarea, li {
 		color: #ffffff;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: clamp(12pt, 1.5vw, 16.5pt);
@@ -109,6 +109,16 @@
 			padding-bottom: 1em;
 			border-bottom: solid 2px rgba(255, 255, 255, 0.125);
 		}
+
+		ul {
+			list-style-type: circle;
+			padding-left: 1.5rem;
+			margin: 0;
+		}
+
+		/*li {
+			font-size: clamp(12pt, 1.5vw, 16.5pt);   clamp(0.85em, 0.48em + 1vw, 1em)
+		}*/
 
 /* Form */
 
@@ -379,37 +389,28 @@
 				max-width: clamp(12em,15em + .5vw,18em); /*15em*/
 				overflow: hidden;
 			}
-		.carousel-item {
-			box-sizing: content-box;
-			display: flex;
-			flex: none;
-			justify-content: center;
-			width: 100%;
-			scroll-snap-align: start;
+
+	.carousel {
+		display: inline-flex;
+		overflow: hidden;
+		&::-webkit-scrollbar {
+			display: none;
 		}
+	}
 
 		.carousel-inner {
 			display: inline-flex;
 			overflow-x: auto;
 			scroll-snap-type: x mandatory;
 			scrollbar-width: none;
-			@media (prefers-reduced-motion: no-preference) {
-				scroll-behavior: smooth;
-			}
-			&::-webkit-scrollbar {
-				display: none;
-			}
 		}
 
-		.carousel {
-			display: inline-flex;
-			overflow-x: hidden;
-			@media (prefers-reduced-motion: no-preference) {
-				scroll-behavior: smooth;
-			}
-			&::-webkit-scrollbar {
-				display: none;
-			}
+		.carousel-item {
+			display: flex;
+			flex: none;
+			justify-content: center;
+			width: 100%;
+			scroll-snap-align: start;
 		}
 
 		.carousel-button {
