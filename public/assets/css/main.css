@@ -384,9 +384,10 @@
 
 			.wrapper.spotlight .image {
 				border-radius: 100%;
-				width: 100%;
-				min-width: 12em;
-				max-width: clamp(12em,15em + .5vw,18em); /*15em*/
+				/*width: 100%;*/
+				width: clamp(12em,13em + .3vw,18em); /*15em*/
+				flex-shrink: 0;
+				object-fit: cover;
 				overflow: hidden;
 			}
 
@@ -468,10 +469,24 @@
 
 		}
 
-		@media screen and (max-width: 480px) {
+		@media screen and (max-width: 640px) {
 
 			.wrapper.spotlight .inner {
 				display: block;
+				
+			}
+
+			.wrapper.spotlight .inner > * + * {
+				margin-top: 1.5rem; /* or whatever spacing you want */
+			}
+
+
+
+			.wrapper.spotlight .image {
+				margin: 0 auto;
+				width: 100%;
+				aspect-ratio: 2 / 1;
+				border-radius: .75rem;
 			}
 
 			/*.wrapper.spotlight .image {

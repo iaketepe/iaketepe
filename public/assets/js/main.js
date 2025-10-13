@@ -26,9 +26,35 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-let carousel = { "slideID": "#domain_slide", "currentIndex" : 1, "totalSlides": 4};
+let carousel = { "slideID": "#domain_slide", "currentIndex" : 1, "totalSlides": 4, "container": document.querySelector(".carousel-inner")};
 let carousel2 = { "slideID": "#experience_slide","currentIndex" : 1, "totalSlides": 4};
 const arr = [carousel, carousel2];
+//const container = document.querySelector(".carousel-inner");
+
+
+function getCurrentIndex(carouselObj) {
+    const container = document.querySelector(".carousel-inner");
+    const slides = document.querySelectorAll(`${carouselObj.slideID}`);
+    let closestIndex = 1;
+    let minDistance = Infinity;
+
+    slides.forEach((slide, idx) => {
+        const distance = Math.abs(slide.offsetLeft - container.scrollLeft);
+        if (distance < minDistance) {
+            minDistance = distance;
+            closestIndex = idx + 1;
+        }
+    });
+
+    return closestIndex;
+}
+
+
+carousel.container.addEventListener('touchend', () => {
+    const nearestIndex = getCurrentIndex(carousel);
+    carousel.currentIndex = nearestIndex; 
+});
+
 
 function handleNext(val) {
     const carouselObj = arr[val] ?? arr[0];
@@ -58,6 +84,7 @@ function handleSliding(carouselObj) {
     });
 
 }
+
 
     const projectNames = ["Hangman PHP","Stand Up Timer","Wine Analysis","Perviewwaves"];
     const projectLinks = ["https://hangman-3x9r.onrender.com/","https://github.com/iaketepe/Stand-Up-Timer/tree/master","https://analysing-red-wine.streamlit.app/","https://perviewwaves.netlify.app/"];
