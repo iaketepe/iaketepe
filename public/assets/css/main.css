@@ -384,8 +384,8 @@
 
 			.wrapper.spotlight .image {
 				border-radius: 100%;
-				/*width: 100%;*/
 				width: clamp(12em,13em + .3vw,18em); /*15em*/
+				aspect-ratio: 1 / 1;
 				flex-shrink: 0;
 				object-fit: cover;
 				overflow: hidden;
@@ -485,6 +485,7 @@
 			.wrapper.spotlight .image {
 				margin: 0 auto;
 				width: 96%;
+				height: auto;
 				aspect-ratio: 2 / 1;
 				border-radius: .75rem;
 			}
