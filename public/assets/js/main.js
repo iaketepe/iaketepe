@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-let carousel = { "slideID": "#domain_slide", "currentIndex" : 1, "totalSlides": 4, "container": document.querySelector(".carousel-inner")};
-let carousel2 = { "slideID": "#experience_slide","currentIndex" : 1, "totalSlides": 4};
+let carousel = { "slideID": "#domain_slide", "currentIndex" : 1, "totalSlides": 4, "container": document.querySelector("#two .carousel-inner")};
+let carousel2 = { "slideID": "#experience_slide","currentIndex" : 1, "totalSlides": 4, "container": document.querySelector("#three .carousel-inner")};
 const arr = [carousel, carousel2];
 //const container = document.querySelector(".carousel-inner");
 
@@ -55,6 +55,11 @@ carousel.container.addEventListener('touchend', () => {
     carousel.currentIndex = nearestIndex; 
 });
 
+carousel2.container.addEventListener('touchend', () => {
+    const nearestIndex = getCurrentIndex(carousel);
+    carousel.currentIndex = nearestIndex; 
+});
+
 
 function handleNext(val) {
     const carouselObj = arr[val] ?? arr[0];
@@ -73,11 +78,10 @@ function handlePrev(val) {
 }
 
 function handleSliding(carouselObj) { 
-    const container = document.querySelector(".carousel-inner");
     const targetSlide = document.querySelector(`${carouselObj.slideID}${carouselObj.currentIndex}`); //"#slide" carouselObj.slideID + carouselObj.currentIndex
 
     requestAnimationFrame(() => {
-        container.scrollTo({
+        carouselObj.container.scrollTo({
             left: targetSlide.offsetLeft,
             behavior: 'smooth'
         });

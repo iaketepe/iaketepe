@@ -113,6 +113,13 @@
 		ul {
 			list-style-type: circle;
 			padding-left: 1.5rem;
+			/* list-style-position: inside; */
+		}
+
+		#three ul {
+			direction: rtl;
+			text-align: right;           /* aligns text to the right */
+			padding-right: 1.5rem;             /* remove default left padding if needed */
 			margin: 0;
 		}
 
