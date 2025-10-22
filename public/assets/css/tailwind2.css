@@ -237,9 +237,6 @@
   .pr-\[10px\] {
     padding-right: 10px;
   }
-  .text-right {
-    text-align: right;
-  }
   .lg\:flex {
     @media (width >= 64rem) {
       display: flex;
@@ -262,7 +259,7 @@ html {
 }
 body {
   background-color: #2e3141;
-  background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
+  background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../assets/images/bg.jpg");
   background-size: auto, cover;
   background-attachment: fixed, fixed;
   background-position: center, center;

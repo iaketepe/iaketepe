@@ -107,7 +107,7 @@ function createProject(projectHeader,projectLink, projectImg, projectDescription
     link.className = "image";
 
     const img = document.createElement("img");
-    img.src = projectImg; //"images/pic04.jpg"
+    img.src = projectImg; //"assets/images/pic04.jpg"
     img.alt = "";
 
     link.appendChild(img);
@@ -129,6 +129,6 @@ function createProject(projectHeader,projectLink, projectImg, projectDescription
 
 
 for (let index = 0; index < projectNames.length; index++) {
-    const article = createProject(projectNames[index],projectLinks[index],"images/pic04.jpg",projectDescriptions[index]);
+    const article = createProject(projectNames[index],projectLinks[index],"assets/images/pic04.jpg",projectDescriptions[index]);
     projectsList.appendChild(article);
 }
