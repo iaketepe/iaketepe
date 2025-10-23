@@ -108,7 +108,7 @@ function createProject(projectHeader,projectLink, projectImg, projectDescription
 
     const img = document.createElement("img");
     img.src = projectImg; //"assets/images/pic04.jpg"
-    img.alt = "";
+    img.alt = "Go to " + projectHeader;
 
     link.appendChild(img);
 
