@@ -58,7 +58,7 @@ Decision: I've decided to work with a boilerplate.
 
 ## Handling Site Reliability
 ### Adding Spam Protection
-Since I was adding a contact form, I needed to deal with the possibility of spam. To combat this, I wanted to implement bot detection software. At first, when it came to trying to implement this, I believed that I should do this through Google Captcha as that was the only technology that I knew could work in this context. However after doing some research, I realized that there may or may not be GDPR compliance issues with Google Captcha as well as Google Fonts. Even though GDPR compliance specifically for the EU, since all nations are connected, trying to look for alternatives that work in line overseas will align well overall. This brings me to the other option, Cloudflare Turnstile.
+Since I was adding a contact form, I needed to deal with the possibility of spam. To combat this, I wanted to implement bot detection software. At first, when it came to implementing this, I believed that I needed Google Captcha as that was the only technology that I knew could work for this. However after doing some research, I realized that there may or may not be GDPR compliance issues with Google Captcha as well as Google Fonts. Even though GDPR compliance is specifically for the EU, since all nations are connected, trying to look for alternatives that work in line overseas should align well overall. This brings me my new option, Cloudflare Turnstile.
 
 #### [Google Captcha](https://cloud.google.com/security/products/recaptcha?hl=en)
 ##### Pros
@@ -81,4 +81,5 @@ Since I was adding a contact form, I needed to deal with the possibility of spam
 ##### Result
 Overall, I believed Cloudflare's Turnstile was the better decision.
 
-
+### Handling Font Hosting
+Initially, I had added my fonts though Google's CDN. However, after the previous segment, I was wondering whether or not I really needed to use google for the fonts as well. So I chose to self host my fonts instead. In order to maximize accessibility with web performance, I only added the exact fonts I was using, along with their specific font weights. I also preloaded my fonts to reduce render blocking.
