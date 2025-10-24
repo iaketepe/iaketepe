@@ -15,8 +15,7 @@
 
 		<link rel="stylesheet" href="assets/css/tailwind2.css" />
 		
-		<!-- <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js" defer></script> -->
-		<!-- <script src="https://kit.fontawesome.com/128eeb45f3.js" crossorigin="anonymous"></script> -->
+		<script type="module" src="assets/js/icons.bundle.js"></script>
 		<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 	</head>
 	<body class="min-h-screen h-screen min-w-[320px]">
@@ -197,11 +196,19 @@
 		<!-- Footer -->
 			<section id="footer" class="flex justify-center">
 				<div class="w-full max-w-[55em]">
-					<h3 class="major">Get in touch</h3>
+					<div class="relative">
+						<h3 class="major">Get in touch</h3>
+						<div class="absolute right-0 top-0 footer-icons flex gap-3 transform translate-y-1/6 z-10">
+							<a href="https://github.com/iaketepe" class="flex" aria-label="Go to Github"><i class="fa-brands fa-github icon"></i></a>
+							<a href="https://www.linkedin.com/in/iyanu-aketepe" class="flex" aria-label="Go to Linkedin"><i class="fa-brands fa-linkedin icon"></i></a>
+						</div>
+					</div>
+
 					<!--<div class="">
 						<a href="" class="icon brands fa-github"></a>
 						<a href="" class="icon brands fa-linkedin"></a>
 					</div> -->
+
 					<!--<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p> -->
 					<form id="contact-form" class="">
 						<div class="">

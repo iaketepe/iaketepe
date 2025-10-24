@@ -4,13 +4,14 @@ const app = express();
 const port = 3000
 
 // Setting CSP Header
+/*
 app.use((_, res, next) => {
   res.setHeader(
     "Content-Security-Policy",
     "script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com;"
   );
   next();
-});
+});*/
 
 // Serve static files from 'public' folder
 app.use(express.static(path.join(__dirname, "public")));

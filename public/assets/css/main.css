@@ -318,6 +318,22 @@
 
 /* Menu */
 
+/* Icons */
+
+.footer-icons {
+	font-size: clamp(1em, 50% + 1vw, 1.2em); /* 0.9*/
+	margin: .15em 0 1em 0;
+}
+
+.icon {
+	color: #9CA3AF;
+	transition: color ease-in-out 0.3s;
+	
+}
+.icon:hover {
+	color: #ffffff;
+}
+
 /* Banner */
 
 	#banner {
