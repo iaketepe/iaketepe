@@ -18,7 +18,7 @@ app.use((_, res, next) => {
   const nonce = res.locals.nonce;
   res.setHeader(
     "Content-Security-Policy",
-    `default-src 'self'; script-src 'self' 'nonce-${nonce}' https://challenges.cloudflare.com 'unsafe-eval' 'unsafe-inline'; frame-src https://challenges.cloudflare.com; img-src 'self' data:; style-src 'self' 'nonce-${nonce}';`
+    `default-src 'self'; base-uri 'self'; script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; img-src 'self' data:; style-src 'self' 'nonce-${nonce}';`
   );
   next();
 });
@@ -79,7 +79,6 @@ async function validateTurnstile(token) {
 
         const result = await response.json();
         if (!result.success) {
-          console.log(params.toString());
           throw new Error("Turnstile verification failed");
         }
         return result;
