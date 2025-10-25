@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-let carousel = { "slideID": "#domain_slide", "currentIndex" : 1, "totalSlides": 4, "container": document.querySelector("#two .carousel-inner")};
-let carousel2 = { "slideID": "#experience_slide","currentIndex" : 1, "totalSlides": 4, "container": document.querySelector("#three .carousel-inner")};
+let carousel = { "slideID": "#domain_slide", "currentIndex" : 1, "totalSlides": 4, "container": document.querySelector("#two .carousel"), "inner" : document.querySelector("#two .carousel-inner")};
+let carousel2 = { "slideID": "#experience_slide","currentIndex" : 1, "totalSlides": 4, "container": document.querySelector("#three .carousel")};
 const arr = [carousel, carousel2];
 //const container = document.querySelector(".carousel-inner");
 
@@ -50,15 +50,23 @@ function getCurrentIndex(carouselObj) {
 }
 
 
-carousel.container.addEventListener('touchend', () => {
+carousel.container.querySelector(".carousel-inner").addEventListener('touchend', () => {
     const nearestIndex = getCurrentIndex(carousel);
     carousel.currentIndex = nearestIndex; 
 });
 
-carousel2.container.addEventListener('touchend', () => {
+carousel.container.querySelector("#prev").addEventListener("click", () => handlePrev(0));
+
+carousel.container.querySelector("#next").addEventListener("click", () => handleNext(0));
+
+carousel2.container.querySelector(".carousel-inner").addEventListener('touchend', () => {
     const nearestIndex = getCurrentIndex(carousel);
     carousel.currentIndex = nearestIndex; 
 });
+
+carousel2.container.querySelector("#prev").addEventListener("click", () => handlePrev(1));
+
+carousel2.container.querySelector("#next").addEventListener("click", () => handleNext(1));
 
 
 function handleNext(val) {
@@ -81,7 +89,7 @@ function handleSliding(carouselObj) {
     const targetSlide = document.querySelector(`${carouselObj.slideID}${carouselObj.currentIndex}`); //"#slide" carouselObj.slideID + carouselObj.currentIndex
 
     requestAnimationFrame(() => {
-        carouselObj.container.scrollTo({
+        carouselObj.container.querySelector(".carousel-inner").scrollTo({
             left: targetSlide.offsetLeft,
             behavior: 'smooth'
         });
