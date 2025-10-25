@@ -7,6 +7,8 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-gray-400: oklch(70.7% 0.022 261.325);
+    --color-white: #fff;
     --spacing: 0.25rem;
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --default-transition-duration: 150ms;
@@ -176,11 +178,14 @@
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
-  .top-auto {
-    top: auto;
+  .top-5 {
+    top: calc(var(--spacing) * 5);
   }
   .right-0 {
     right: calc(var(--spacing) * 0);
+  }
+  .right-3 {
+    right: calc(var(--spacing) * 3);
   }
   .z-10 {
     z-index: 10;
@@ -203,15 +208,6 @@
       max-width: 96rem;
     }
   }
-  .m-0 {
-    margin: calc(var(--spacing) * 0);
-  }
-  .my-0 {
-    margin-block: calc(var(--spacing) * 0);
-  }
-  .mt-0 {
-    margin-top: calc(var(--spacing) * 0);
-  }
   .flex {
     display: flex;
   }
@@ -221,11 +217,14 @@
   .inline {
     display: inline;
   }
-  .inline-block {
-    display: inline-block;
-  }
   .table {
     display: table;
+  }
+  .h-5 {
+    height: calc(var(--spacing) * 5);
+  }
+  .h-6 {
+    height: calc(var(--spacing) * 6);
   }
   .h-full {
     height: 100%;
@@ -238,6 +237,12 @@
   }
   .min-h-screen {
     min-height: 100vh;
+  }
+  .w-5 {
+    width: calc(var(--spacing) * 5);
+  }
+  .w-6 {
+    width: calc(var(--spacing) * 6);
   }
   .w-full {
     width: 100%;
@@ -271,6 +276,12 @@
     --tw-translate-y: calc(1/6 * 100%);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
+  .scale-150 {
+    --tw-scale-x: 150%;
+    --tw-scale-y: 150%;
+    --tw-scale-z: 150%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
   .rotate-90 {
     rotate: 90deg;
   }
@@ -301,8 +312,11 @@
   .justify-center {
     justify-content: center;
   }
-  .gap-3 {
-    gap: calc(var(--spacing) * 3);
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
+  .gap-5 {
+    gap: calc(var(--spacing) * 5);
   }
   .overflow-x-hidden {
     overflow-x: hidden;
@@ -317,11 +331,11 @@
   .\!bg-\[\#4c5c96\] {
     background-color: #4c5c96 !important;
   }
-  .p-0 {
-    padding: calc(var(--spacing) * 0);
-  }
   .pr-\[10px\] {
     padding-right: 10px;
+  }
+  .text-gray-400 {
+    color: var(--color-gray-400);
   }
   .underline {
     text-decoration-line: underline;
@@ -335,9 +349,25 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
+  .transition-colors {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .duration-300 {
+    --tw-duration: 300ms;
+    transition-duration: 300ms;
+  }
   .ease-in-out {
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
+  }
+  .hover\:text-white {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-white);
+      }
+    }
   }
   .lg\:flex {
     @media (width >= 64rem) {
@@ -561,6 +591,7 @@ input[type="submit"]:active,	input[type="button"]:active,	.button:active {
   margin: .15em 0 1em 0;
 }
 .icon {
+  height: clamp(1em, 50% + 1vw, 1.2em);
   color: #9CA3AF;
   transition: color ease-in-out 0.3s;
 }
@@ -740,6 +771,21 @@ input[type="submit"]:active,	input[type="button"]:active,	.button:active {
   inherits: false;
   initial-value: 0;
 }
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
 @property --tw-rotate-x {
   syntax: "*";
   inherits: false;
@@ -770,6 +816,10 @@ input[type="submit"]:active,	input[type="button"]:active,	.button:active {
   inherits: false;
   initial-value: solid;
 }
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-ease {
   syntax: "*";
   inherits: false;
@@ -780,6 +830,9 @@ input[type="submit"]:active,	input[type="button"]:active,	.button:active {
       --tw-translate-x: 0;
       --tw-translate-y: 0;
       --tw-translate-z: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-scale-z: 1;
       --tw-rotate-x: initial;
       --tw-rotate-y: initial;
       --tw-rotate-z: initial;
@@ -787,6 +840,7 @@ input[type="submit"]:active,	input[type="button"]:active,	.button:active {
       --tw-skew-y: initial;
       --tw-border-style: solid;
       --tw-outline-style: solid;
+      --tw-duration: initial;
       --tw-ease: initial;
     }
   }

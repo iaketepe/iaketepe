@@ -326,6 +326,7 @@
 }
 
 .icon {
+	height: clamp(1em, 50% + 1vw, 1.2em);
 	color: #9CA3AF;
 	transition: color ease-in-out 0.3s;
 	

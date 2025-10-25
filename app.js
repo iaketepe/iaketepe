@@ -1,17 +1,27 @@
 const express = require('express');
+const crypto = require('crypto');
 const path = require("path"); 
 const app = express();
 const port = 3000
 
-// Setting CSP Header
-/*
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "public"));
+
 app.use((_, res, next) => {
+  const nonce = crypto.randomBytes(16).toString("base64");
+  res.locals.nonce = nonce;
+  next();
+});
+
+// Setting CSP Header
+app.use((_, res, next) => {
+  const nonce = res.locals.nonce;
   res.setHeader(
     "Content-Security-Policy",
-    "script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com;"
+    `default-src 'self'; script-src 'self' 'nonce-${nonce}' https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; img-src 'self' data:; style-src 'self' 'nonce-${nonce}';`
   );
   next();
-});*/
+});
 
 // Serve static files from 'public' folder
 app.use(express.static(path.join(__dirname, "public")));
@@ -19,6 +29,10 @@ app.use(express.json());
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`); //127.0.0.1
+});
+
+app.get('/', (_, res) => {
+  res.render('index', { nonce: res.locals.nonce });
 });
 
 const nodemailer = require("nodemailer");
