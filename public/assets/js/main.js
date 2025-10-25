@@ -6,12 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
 
         const formData = new FormData(form);
-        //formData.append('token', token); //formdata.append('cf-turnstile-response', token);
-        const formBody = Object.fromEntries(formData.entries());
-        //const token = formData.get('token');
-        //console.log(formBody);
-        //console.log(formData.get('token'));
-
+        const formBody = Object.fromEntries(formData.entries());;
 
         const res = await fetch('/submit', {
             method: 'POST',
@@ -20,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         const data = await res.json();
-        console.log(data);
     })
 
 });
