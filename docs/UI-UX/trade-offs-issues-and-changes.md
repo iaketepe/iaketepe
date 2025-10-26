@@ -81,5 +81,23 @@ Since I was adding a contact form, I needed to deal with the possibility of spam
 ##### Result
 Overall, I believed Cloudflare's Turnstile was the better decision.
 
+
 ### Handling Font Hosting
 Initially, I had added my fonts though Google's CDN. However, after the previous segment, I was wondering whether or not I really needed to use google for the fonts as well. So I chose to self host my fonts instead. In order to maximize accessibility with web performance, I only added the exact fonts I was using, along with their specific font weights. I also preloaded my fonts to reduce render blocking.
+
+### Dealing with CSP
+After I implemented my turnstile, I saw an interesting error. Something along the lines of "Had no script-src so used default-src as a fallback". To fix this error, I realized that I needed a Content Security Policy. I started by adding [script and frame source rules](https://developers.cloudflare.com/turnstile/reference/content-security-policy/) including the subdomain cloud flare uses for my project. However, as I tried to develop over time, I had to figure out how to update my CSP.
+
+#### Dealing with Icons
+At this point, most of my project had been completed. But to make sure people had a way of getting in touch or see my github explicitly, led me to add icons. I started out by choosing FontAwesome. I've used them in the past because they supply quality icons for a good price (free). 
+
+I began to add FontAwesome by using their CDN link to set up where I wanted my fonts. I started out by using the CDN version. However, I eventually changed to using a kit because the CDN downloads all free icons from their repository, causing render delay. However, I found out that using a kit was just as bad because it forces me to download all the same number of icons. So I had to change my approach. 
+
+Instead of using a link, I downloaded their free icons as a package dependency, and then built a module using esbuild. This module would sift through my icons and add only the icons I needed to my project. This process would allow me to remove render delay, since all my icons would have been built into project instead of having to be grabbed at run. 
+
+This solution worked, my render delay was down, and was site was performing well. The only problem is CSP. After doing this, I wanted to update my CSP. So I started adding in basic rules like default-src 'self', preventing my server from dealing with anything outside itself. However, this open up new challenges that forced my hand on the implementation.
+
+To get icons rendered, FontAwesome replaces i elements with svg ones on render. CSP sees this as a problem since it revoles around using inline script execution. I added nonces to my script elements, but even after doing that CSP still blocked the 'injection'. So I had to change my provider from FontAwesome to Remix Icon. Remix Icon gives me the svg elements directly, so I don't have to worry about the script execution.
+
+
+
