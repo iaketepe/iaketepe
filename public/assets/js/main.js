@@ -15,15 +15,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         const data = await res.json();
+
+        showToast(data);
     })
 
 });
+
+  function showToast(data) {
+    const container = document.getElementById('toastContainer');
+    if (container.toastTimeout) clearTimeout(container.toastTimeout);
+
+    const toast = document.createElement('div');
+    toast.className = `rounded-lg shadow text-white font-bold text-center ${ data.success ? 'bg-green-800' : 'bg-red-800'}`;
+    toast.innerText = data.success ? 'Email sent Successfully' : data.error || 'Something went wrong';
+
+    container.replaceChildren(toast);
+    container.classList.remove('hidden');
+
+    // Remove after 3 seconds
+    container.toastTimeout = setTimeout(() => {
+        toast.remove();
+        container.classList.add('hidden');
+        container.toastTimeout = null;
+    }, 3000);
+  }
 
 
 let carousel = { "slideID": "#domain_slide", "currentIndex" : 1, "totalSlides": 4, "container": document.querySelector("#two .carousel"), "inner" : document.querySelector("#two .carousel-inner")};
 let carousel2 = { "slideID": "#experience_slide","currentIndex" : 1, "totalSlides": 4, "container": document.querySelector("#three .carousel")};
 const arr = [carousel, carousel2];
-//const container = document.querySelector(".carousel-inner");
 
 
 function getCurrentIndex(carouselObj) {
@@ -55,7 +75,7 @@ carousel.container.querySelector("#next").addEventListener("click", () => handle
 
 carousel2.container.querySelector(".carousel-inner").addEventListener('touchend', () => {
     const nearestIndex = getCurrentIndex(carousel);
-    carousel.currentIndex = nearestIndex; 
+    carousel2.currentIndex = nearestIndex; 
 });
 
 carousel2.container.querySelector("#prev").addEventListener("click", () => handlePrev(1));
@@ -80,7 +100,7 @@ function handlePrev(val) {
 }
 
 function handleSliding(carouselObj) { 
-    const targetSlide = document.querySelector(`${carouselObj.slideID}${carouselObj.currentIndex}`); //"#slide" carouselObj.slideID + carouselObj.currentIndex
+    const targetSlide = document.querySelector(`${carouselObj.slideID}${carouselObj.currentIndex}`);
 
     requestAnimationFrame(() => {
         carouselObj.container.querySelector(".carousel-inner").scrollTo({
@@ -88,20 +108,14 @@ function handleSliding(carouselObj) {
             behavior: 'smooth'
         });
     });
-
 }
 
-
-    const projectNames = ["Hangman PHP","Stand Up Timer","Wine Analysis","Play Off Rentals 2"];
-    const projectLinks = ["https://hangman-3x9r.onrender.com/","https://github.com/iaketepe/Stand-Up-Timer-Desktop","https://analysing-red-wine.streamlit.app/","https://github.com/iaketepe/play-off-rentals-2.0"];
-    const projectDescriptions = ["A hangman game, coded in PHP, HTML, JS and CSS, as well as SQL for the database","A timer that helps people stand up regularly after sitting for long periods of time","A data analysis project turned into a data app, using streamlit","a full stack project simulating the web store of a local business."];
-
-
-
+const projectsList = document.getElementById("projectsList");
+const projectNames = ["Hangman PHP","Stand Up Timer","Wine Analysis","Play Off Rentals 2"];
+const projectLinks = ["https://hangman-3x9r.onrender.com/","https://github.com/iaketepe/Stand-Up-Timer-Desktop","https://analysing-red-wine.streamlit.app/","https://github.com/iaketepe/play-off-rentals-2.0"];
+const projectDescriptions = ["A hangman game, coded in PHP, HTML, JS and CSS, as well as SQL for the database","A timer that helps people stand up regularly after sitting for long periods of time","A data analysis project turned into a data app, using streamlit","a full stack project simulating the web store of a local business."];
 
 function createProject(projectHeader,projectLink, projectImg, projectDescription) {
-    const projectsList = document.createElement("projectsList");
-
     const article = document.createElement("article");
 
     const link = document.createElement("a");
@@ -126,7 +140,6 @@ function createProject(projectHeader,projectLink, projectImg, projectDescription
     article.appendChild(p);
 
     return article;
-
 }
 
 
