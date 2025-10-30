@@ -1,11 +1,12 @@
 const express = require('express');
-const crypto = require('crypto');
 const path = require("path"); 
 const app = express();
 const port = 3000
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "public"));
+
+const crypto = require('crypto');
 
 app.use((_, res, next) => {
   const nonce = crypto.randomBytes(16).toString("base64");
@@ -36,8 +37,19 @@ app.get('/', (_, res) => {
 });
 
 const nodemailer = require("nodemailer");
+const rateLimit = require('express-rate-limit');
 
-app.post('/submit', async (req, res) => {
+const emailLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000,
+  max: 10,
+  message: (req, res) => {
+    return { error: "Too many submissions have been given. Please try again later..." };
+  },
+  standardHeaders: true,
+  legacyHeaders: false,
+}); 
+
+app.post('/submit', emailLimiter, async (req, res) => {
   const { name, email, message, 'cf-turnstile-response': token } = req.body;
   //validation (cloudflare and email content)
   console.log(name, email, message, token);
