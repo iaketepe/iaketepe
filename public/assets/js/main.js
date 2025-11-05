@@ -1,5 +1,3 @@
-//const { create } = require("domain");
-
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById("contact-form");
     form.addEventListener("submit", async (e) => {
@@ -73,6 +71,11 @@ carousel.container.querySelector("#prev").addEventListener("click", () => handle
 
 carousel.container.querySelector("#next").addEventListener("click", () => handleNext(0));
 
+
+// traverse totalslides 
+    // create and add slide indicators to DOM
+    // create addlisteners for each indicator
+
 carousel.container.querySelector("#s1").addEventListener("click", () => {
     carousel.currentIndex = 1;
     handleSliding(carousel);
@@ -97,6 +100,27 @@ carousel.container.querySelector("#s4").addEventListener("click", () => {
 carousel2.container.querySelector(".carousel-inner").addEventListener('touchend', () => {
     const nearestIndex = getCurrentIndex(carousel);
     carousel2.currentIndex = nearestIndex; 
+});
+
+carousel2.container.querySelector("#s1").addEventListener("click", () => {
+    carousel2.currentIndex = 1;
+    handleSliding(carousel2);
+});
+
+carousel2.container.querySelector("#s2").addEventListener("click", () => {
+    carousel2.currentIndex = 2;
+    handleSliding(carousel2);
+});
+
+
+carousel2.container.querySelector("#s3").addEventListener("click", () => {
+    carousel2.currentIndex = 3;
+    handleSliding(carousel2);
+});
+
+carousel2.container.querySelector("#s4").addEventListener("click", () => {
+    carousel2.currentIndex = 4;
+    handleSliding(carousel2);
 });
 
 carousel2.container.querySelector("#prev").addEventListener("click", () => handlePrev(1));
@@ -131,11 +155,6 @@ function handleSliding(carouselObj) {
     });
 }
 
-const projectsList = document.getElementById("projectsList");
-const projectNames = ["Hangman PHP","Stand Up Timer","Wine Analysis","Play Off Rentals 2"];
-const projectLinks = ["https://hangman-3x9r.onrender.com/","https://github.com/iaketepe/Stand-Up-Timer-Desktop","https://analysing-red-wine.streamlit.app/","https://github.com/iaketepe/play-off-rentals-2.0"];
-const projectDescriptions = ["A hangman game, coded in PHP, HTML, JS and CSS, as well as SQL for the database","A timer that helps people stand up regularly after sitting for long periods of time","A data analysis project turned into a data app, using streamlit","a full stack project simulating the web store of a local business."];
-
 function createProject(projectHeader,projectLink, projectImg, projectDescription) {
     const article = document.createElement("article");
 
@@ -144,7 +163,7 @@ function createProject(projectHeader,projectLink, projectImg, projectDescription
     link.className = "image";
 
     const img = document.createElement("img");
-    img.src = projectImg; //"assets/images/pic04.jpg"
+    img.src = projectImg;
     img.alt = "Go to " + projectHeader;
 
     link.appendChild(img);
@@ -154,7 +173,7 @@ function createProject(projectHeader,projectLink, projectImg, projectDescription
     h4.textContent = projectHeader;
 
     const p = document.createElement("p");
-    p.textContent = projectDescription; //"Sed feugiat lorem"
+    p.textContent = projectDescription;
 
     article.appendChild(link);
     article.appendChild(h4);
@@ -162,6 +181,11 @@ function createProject(projectHeader,projectLink, projectImg, projectDescription
 
     return article;
 }
+
+const projectsList = document.getElementById("projectsList");
+const projectNames = ["Hangman PHP","Stand Up Timer","Wine Analysis","Play Off Rentals 2"];
+const projectLinks = ["https://hangman-3x9r.onrender.com/","https://github.com/iaketepe/Stand-Up-Timer-Desktop","https://analysing-red-wine.streamlit.app/","https://github.com/iaketepe/play-off-rentals-2.0"];
+const projectDescriptions = ["A hangman game, coded in PHP, HTML, JS and CSS, as well as SQL for the database","A timer that helps people stand up regularly after sitting for long periods of time","A data analysis project turned into a data app, using streamlit","a full stack project simulating the web store of a local business."];
 
 
 for (let index = 0; index < projectNames.length; index++) {
