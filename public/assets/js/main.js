@@ -73,6 +73,27 @@ carousel.container.querySelector("#prev").addEventListener("click", () => handle
 
 carousel.container.querySelector("#next").addEventListener("click", () => handleNext(0));
 
+carousel.container.querySelector("#s1").addEventListener("click", () => {
+    carousel.currentIndex = 1;
+    handleSliding(carousel);
+});
+
+carousel.container.querySelector("#s2").addEventListener("click", () => {
+    carousel.currentIndex = 2;
+    handleSliding(carousel);
+});
+
+
+carousel.container.querySelector("#s3").addEventListener("click", () => {
+    carousel.currentIndex = 3;
+    handleSliding(carousel);
+});
+
+carousel.container.querySelector("#s4").addEventListener("click", () => {
+    carousel.currentIndex = 4;
+    handleSliding(carousel);
+});
+
 carousel2.container.querySelector(".carousel-inner").addEventListener('touchend', () => {
     const nearestIndex = getCurrentIndex(carousel);
     carousel2.currentIndex = nearestIndex; 
