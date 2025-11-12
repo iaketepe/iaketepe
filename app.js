@@ -137,7 +137,7 @@ async function sendEmail(name, email, message, carrier) {
       to: process.env.SMTP_USER,
       bcc: process.env.OTHER_USER,
       replyTo: email,
-      subject: `"${name}" <${email}> sent you an email`,
+      subject: `${name} <${email}> sent you an email`,
       text: message
     });
   } catch (err) {
