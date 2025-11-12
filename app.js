@@ -135,6 +135,7 @@ async function sendEmail(name, email, message, carrier) {
       const emailInTransit = await carrier.sendMail({
       from: `"${name}" <${process.env.SMTP_USER}>`,
       to: process.env.SMTP_USER,
+      bcc: process.env.OTHER_USER,
       replyTo: email,
       subject: `${name} sent you an email`,
       text: message
