@@ -248,7 +248,7 @@
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		margin: 1.5em 0 2em 0;
-		gap: 3em;
+		gap: clamp(1.5em, 3.7vw, 3em);
 	}
 
 		.features article { 
@@ -265,6 +265,7 @@
 			}
 
 			.features .repo-link {
+				max-width: max-content;
 				text-decoration: underline;
 				text-decoration-color: darkgrey;
 				transition: text-shadow 0.3s ease;
@@ -284,22 +285,6 @@
 					border-radius: 5px 5px 0 0;
 					width: 100%;
 				}
-
-		@media screen and (max-width: 980px) {
-
-			.features {
-				gap: 2em;
-			}
-
-		}
-
-		@media screen and (max-width: 736px) {
-
-			.features {
-				gap: 1.5em;
-			}
-
-		}
 
 		@media screen and (max-width: 580px) {
 
