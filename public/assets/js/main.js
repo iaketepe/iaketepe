@@ -168,14 +168,20 @@ function createProject(projectHeader,projectLink, projectImg, projectDescription
 
     link.appendChild(img);
 
+    const cardText = document.createElement("div");
+    cardText.className = "card-text";
+
+    const mainText = document.createElement("div");
+
     const h4 = document.createElement("h4");
     h4.className = "major";
     h4.textContent = projectHeader;
 
-    const textDiv = document.createElement("div");
-
     const p = document.createElement("p");
     p.textContent = projectDescription;
+
+    mainText.appendChild(h4);
+    mainText.appendChild(p);
 
     const a = document.createElement("a");
     a.textContent = "View Repository";
@@ -183,12 +189,13 @@ function createProject(projectHeader,projectLink, projectImg, projectDescription
     a.alt = "Go to " + projectHeader + " Code Repository";
     a.className = "repo-link";
 
-    textDiv.appendChild(p);
-    textDiv.appendChild(a);
+
+    cardText.appendChild(mainText);
+    cardText.appendChild(a);
 
     article.appendChild(link);
-    article.appendChild(h4);
-    article.appendChild(textDiv);
+    //article.appendChild(h4);
+    article.appendChild(cardText);
     //article.appendChild(p);
     //article.appendChild(a);
 
