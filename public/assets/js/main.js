@@ -155,7 +155,7 @@ function handleSliding(carouselObj) {
     });
 }
 
-function createProject(projectHeader,projectLink, projectImg, projectDescription) {
+function createProject(projectHeader,projectLink, projectImg, projectDescription, projectRepo) {
     const article = document.createElement("article");
 
     const link = document.createElement("a");
@@ -172,23 +172,37 @@ function createProject(projectHeader,projectLink, projectImg, projectDescription
     h4.className = "major";
     h4.textContent = projectHeader;
 
+    const textDiv = document.createElement("div");
+
     const p = document.createElement("p");
     p.textContent = projectDescription;
 
+    const a = document.createElement("a");
+    a.textContent = "View Repository";
+    a.href = projectRepo;
+    a.alt = "Go to " + projectHeader + " Code Repository";
+    a.className = "repo-link";
+
+    textDiv.appendChild(p);
+    textDiv.appendChild(a);
+
     article.appendChild(link);
     article.appendChild(h4);
-    article.appendChild(p);
+    article.appendChild(textDiv);
+    //article.appendChild(p);
+    //article.appendChild(a);
 
     return article;
 }
 
 const projectsList = document.getElementById("projectsList");
 const projectNames = ["Hangman PHP","Stand Up Timer","Wine Analysis","Play Off Rentals 2"];
-const projectLinks = ["https://hangman-3x9r.onrender.com/","https://github.com/iaketepe/Stand-Up-Timer-Desktop","https://analysing-red-wine.streamlit.app/","https://github.com/iaketepe/play-off-rentals-2.0"];
+const projectLinks = ["https://hangman-3x9r.onrender.com","https://github.com/iaketepe/Stand-Up-Timer-Desktop","https://analysing-red-wine.streamlit.app","https://play-off-rentals-2-0.onrender.com"];
 const projectDescriptions = ["A hangman game, coded in PHP, HTML, JS and CSS, as well as SQL for the database","A timer that helps people stand up regularly after sitting for long periods of time","A data analysis project turned into a data app, using streamlit","a full stack project simulating the web store of a local business."];
+const projectRepos = ["https://github.com/iaketepe/Hangman","https://github.com/iaketepe/Stand-Up-Timer-Desktop","https://github.com/iaketepe/Wine-Analysis","https://github.com/iaketepe/play-off-rentals-2.0"];
 
 
 for (let index = 0; index < projectNames.length; index++) {
-    const article = createProject(projectNames[index],projectLinks[index],"assets/images/pic04.jpg",projectDescriptions[index]);
+    const article = createProject(projectNames[index],projectLinks[index],"assets/images/pic04.jpg",projectDescriptions[index], projectRepos[index]);
     projectsList.appendChild(article);
 }
