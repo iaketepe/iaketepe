@@ -217,10 +217,10 @@ function createProject(projectObj) {
 
 const projectsList = document.getElementById("projectsList");
 const projects = [
+    { "name" : "Play Off Rentals 2", "img" : "", "description" : "A full stack project simulating the web store of a local business", "repository" : "https://github.com/iaketepe/play-off-rentals-2.0", "app" : "https://play-off-rentals-2-0.onrender.com"},
     { "name" : "Hangman PHP", "img" : "", "description" : "A hangman game, coded in PHP, HTML, JS and CSS, as well as SQL for the database", "repository" : "https://github.com/iaketepe/Hangman", "app" : "https://hangman-3x9r.onrender.com"},
-    { "name" : "Stand Up Timer", "img" : "", "description" : "A timer that helps people stand up regularly after sitting for long periods of time", "repository" : "https://github.com/iaketepe/Stand-Up-Timer-Desktop", "app" : "https://hangman-3x9r.onrender.com"},
-    { "name" : "Wine Analysis", "img" : "", "description" : "A data analysis project turned into a data app, using streamlit", "repository" : "https://github.com/iaketepe/Wine-Analysis", "app" : "https://hangman-3x9r.onrender.com"},
-    { "name" : "Play Off Rentals 2", "img" : "", "description" : "A full stack project simulating the web store of a local business", "repository" : "https://github.com/iaketepe/play-off-rentals-2.0", "app" : "https://hangman-3x9r.onrender.com"},
+    { "name" : "Stand Up Timer", "img" : "", "description" : "A timer that helps people stand up regularly after sitting for long periods of time", "repository" : "https://github.com/iaketepe/Stand-Up-Timer-Desktop", "app" : ""},
+    { "name" : "Wine Analysis", "img" : "", "description" : "A data analysis project turned into a data app, using streamlit", "repository" : "https://github.com/iaketepe/Wine-Analysis", "app" : "https://analysing-red-wine.streamlit.app"},
 ];
 
 for (let index = 0; index < projects.length; index++) {
