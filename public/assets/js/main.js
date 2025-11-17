@@ -155,18 +155,18 @@ function handleSliding(carouselObj) {
     });
 }
 
-function createProject(projectHeader,projectLink, projectImg, projectDescription, projectRepo) {
+function createProject(projectHeader, projectImg, projectDescription, projectRepo, projectApp) {
     const article = document.createElement("article");
 
-    const link = document.createElement("a");
-    link.href = projectLink;
-    link.className = "image";
+    const imgAnchor = document.createElement("a");
+    imgAnchor.href = projectApp || projectRepo;
+    imgAnchor.className = "image";
 
     const img = document.createElement("img");
     img.src = projectImg;
     img.alt = "Go to " + projectHeader;
 
-    link.appendChild(img);
+    imgAnchor.appendChild(img);
 
     const cardText = document.createElement("div");
     cardText.className = "card-text";
@@ -183,33 +183,46 @@ function createProject(projectHeader,projectLink, projectImg, projectDescription
     mainText.appendChild(h4);
     mainText.appendChild(p);
 
-    const a = document.createElement("a");
-    a.textContent = "View Repository";
-    a.href = projectRepo;
-    a.alt = "Go to " + projectHeader + " Code Repository";
-    a.className = "repo-link";
+    const anchorDiv = document.createElement("div");
+    anchorDiv.className = "flex justify-between"
+
+    const repoAnchor = document.createElement("a");
+    repoAnchor.textContent = "View Repository";
+    repoAnchor.href = projectRepo;
+    repoAnchor.alt = "Go to " + projectHeader + " Code Repository";
+    repoAnchor.className = "repo-link";
+
+    anchorDiv.appendChild(repoAnchor);
+
+    if(projectApp) {
+        const appAnchor = document.createElement("a");
+
+        appAnchor.textContent = "View App";
+        appAnchor.href = projectApp;
+        appAnchor.alt = "Go to " + projectHeader;
+        appAnchor.className = "repo-link";
+
+        anchorDiv.appendChild(appAnchor);
+    }
 
 
     cardText.appendChild(mainText);
-    cardText.appendChild(a);
+    cardText.appendChild(anchorDiv);
 
-    article.appendChild(link);
-    //article.appendChild(h4);
+    article.appendChild(imgAnchor);
     article.appendChild(cardText);
-    //article.appendChild(p);
-    //article.appendChild(a);
 
     return article;
 }
 
 const projectsList = document.getElementById("projectsList");
 const projectNames = ["Hangman PHP","Stand Up Timer","Wine Analysis","Play Off Rentals 2"];
-const projectLinks = ["https://hangman-3x9r.onrender.com","https://github.com/iaketepe/Stand-Up-Timer-Desktop","https://analysing-red-wine.streamlit.app","https://play-off-rentals-2-0.onrender.com"];
 const projectDescriptions = ["A hangman game, coded in PHP, HTML, JS and CSS, as well as SQL for the database","A timer that helps people stand up regularly after sitting for long periods of time","A data analysis project turned into a data app, using streamlit","a full stack project simulating the web store of a local business."];
 const projectRepos = ["https://github.com/iaketepe/Hangman","https://github.com/iaketepe/Stand-Up-Timer-Desktop","https://github.com/iaketepe/Wine-Analysis","https://github.com/iaketepe/play-off-rentals-2.0"];
+const projectApps = ["https://hangman-3x9r.onrender.com","","https://analysing-red-wine.streamlit.app","https://play-off-rentals-2-0.onrender.com"];
 
 
 for (let index = 0; index < projectNames.length; index++) {
-    const article = createProject(projectNames[index],projectLinks[index],"assets/images/pic04.jpg",projectDescriptions[index], projectRepos[index]);
+    const article = createProject(projectNames[index],"assets/images/pic04.jpg",projectDescriptions[index], projectRepos[index], projectApps[index]);
     projectsList.appendChild(article);
 }
