@@ -155,16 +155,16 @@ function handleSliding(carouselObj) {
     });
 }
 
-function createProject(projectHeader, projectImg, projectDescription, projectRepo, projectApp) {
+function createProject(projectObj) {
     const article = document.createElement("article");
 
     const imgAnchor = document.createElement("a");
-    imgAnchor.href = projectApp || projectRepo;
+    imgAnchor.href = projectObj.app || projectObj.repository;
     imgAnchor.className = "image";
 
     const img = document.createElement("img");
-    img.src = projectImg;
-    img.alt = "Go to " + projectHeader;
+    img.src = projectObj.img || "assets/images/pic04.jpg";
+    img.alt = "Go to " + projectObj.name;
 
     imgAnchor.appendChild(img);
 
@@ -175,10 +175,10 @@ function createProject(projectHeader, projectImg, projectDescription, projectRep
 
     const h4 = document.createElement("h4");
     h4.className = "major";
-    h4.textContent = projectHeader;
+    h4.textContent = projectObj.name;
 
     const p = document.createElement("p");
-    p.textContent = projectDescription;
+    p.textContent = projectObj.description;
 
     mainText.appendChild(h4);
     mainText.appendChild(p);
@@ -188,18 +188,18 @@ function createProject(projectHeader, projectImg, projectDescription, projectRep
 
     const repoAnchor = document.createElement("a");
     repoAnchor.textContent = "View Repository";
-    repoAnchor.href = projectRepo;
-    repoAnchor.alt = "Go to " + projectHeader + " Code Repository";
+    repoAnchor.href = projectObj.repository;
+    repoAnchor.alt = "Go to " + projectObj.name + " Code Repository";
     repoAnchor.className = "repo-link";
 
     anchorDiv.appendChild(repoAnchor);
 
-    if(projectApp) {
+    if(projectObj.app) {
         const appAnchor = document.createElement("a");
 
         appAnchor.textContent = "View App";
-        appAnchor.href = projectApp;
-        appAnchor.alt = "Go to " + projectHeader;
+        appAnchor.href = projectObj.app;
+        appAnchor.alt = "Go to " + projectObj.name;
         appAnchor.className = "repo-link";
 
         anchorDiv.appendChild(appAnchor);
@@ -216,13 +216,13 @@ function createProject(projectHeader, projectImg, projectDescription, projectRep
 }
 
 const projectsList = document.getElementById("projectsList");
-const projectNames = ["Hangman PHP","Stand Up Timer","Wine Analysis","Play Off Rentals 2"];
-const projectDescriptions = ["A hangman game, coded in PHP, HTML, JS and CSS, as well as SQL for the database","A timer that helps people stand up regularly after sitting for long periods of time","A data analysis project turned into a data app, using streamlit","a full stack project simulating the web store of a local business."];
-const projectRepos = ["https://github.com/iaketepe/Hangman","https://github.com/iaketepe/Stand-Up-Timer-Desktop","https://github.com/iaketepe/Wine-Analysis","https://github.com/iaketepe/play-off-rentals-2.0"];
-const projectApps = ["https://hangman-3x9r.onrender.com","","https://analysing-red-wine.streamlit.app","https://play-off-rentals-2-0.onrender.com"];
+const projects = [
+    { "name" : "Hangman PHP", "img" : "", "description" : "A hangman game, coded in PHP, HTML, JS and CSS, as well as SQL for the database", "repository" : "https://github.com/iaketepe/Hangman", "app" : "https://hangman-3x9r.onrender.com"},
+    { "name" : "Stand Up Timer", "img" : "", "description" : "A timer that helps people stand up regularly after sitting for long periods of time", "repository" : "https://github.com/iaketepe/Stand-Up-Timer-Desktop", "app" : "https://hangman-3x9r.onrender.com"},
+    { "name" : "Wine Analysis", "img" : "", "description" : "A data analysis project turned into a data app, using streamlit", "repository" : "https://github.com/iaketepe/Wine-Analysis", "app" : "https://hangman-3x9r.onrender.com"},
+    { "name" : "Play Off Rentals 2", "img" : "", "description" : "A full stack project simulating the web store of a local business", "repository" : "https://github.com/iaketepe/play-off-rentals-2.0", "app" : "https://hangman-3x9r.onrender.com"},
+];
 
-
-for (let index = 0; index < projectNames.length; index++) {
-    const article = createProject(projectNames[index],"assets/images/pic04.jpg",projectDescriptions[index], projectRepos[index], projectApps[index]);
-    projectsList.appendChild(article);
+for (let index = 0; index < projects.length; index++) {
+    projectsList.appendChild(createProject(projects[index]));
 }
