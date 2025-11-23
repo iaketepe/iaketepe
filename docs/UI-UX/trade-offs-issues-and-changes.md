@@ -32,10 +32,11 @@ Decision: I've decided to work with a boilerplate.
 
 ### Transforming the Design
 
-#### Dealing with Carousel
+#### Dealing with Carousels
 - Adding carousels was an example of the changes I would make to really set the UI/UX apart from the boilerplate. Users would be able to sift through them, seeing information on my skills and experiences. While implementing them, I ran into some subtle transition issues, specifically when switching between desktop and mobile views. The issue came from how the scrolling was calculated for a given slide. Since the slide's width changed on resize, the browser occasionally lost track of which slide it should display.
 
 - To solve this, I wrapped the scrolling logic inside a requestAnimationFrame() call, allowing the DOM to finish resizing before recalculating widths and scroll positions. For the most part this solved the problem. However, I noticed a small desynchronization between my custom sliding logic and mobile’s built-in swipe handling. To fully align them, I added a function that determines the current index based on the final position of a user’s swipe and updates the carousel state accordingly. While it’s a subtle fix, it ensures smoother behavior across devices and keeps the experience feeling cohesive.
+
 
 
 ## Deploying the Site
