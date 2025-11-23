@@ -37,7 +37,11 @@ Decision: I've decided to work with a boilerplate.
 
 - To solve this, I wrapped the scrolling logic inside a requestAnimationFrame() call, allowing the DOM to finish resizing before recalculating widths and scroll positions. For the most part this solved the problem. However, I noticed a small desynchronization between my custom sliding logic and mobile’s built-in swipe handling. To fully align them, I added a function that determines the current index based on the final position of a user’s swipe and updates the carousel state accordingly. While it’s a subtle fix, it ensures smoother behavior across devices and keeps the experience feeling cohesive.
 
+#### Dealing with Projects
 
+- To improve the visibility of my project repositories along with their deployed apps, I added anchors to my list of projects. However, when I tried to align my anchors properly, I saw a 'droopy' anchor layout shift when the site was resized. After sifting through the code, I realized this was happening was because of the layout design of the boilerplate cards. To start with, there was no seperation between image and card information, it was all one element with padding around both. As a result, css properties like padding were being applied either more than necessary (to image), or had the potential to impact how the card information was rendered.
+- To hold itself together, it relied on a lot of explicit CSS recalculations (calc()) to hold itself together. Almost as a side effect of this, it seemed that the images didn't actually fit in properly to the card. They had been given images had negative margins to 'fix' them back inplace as part of the card. 
+- To improve this, I converted the cards to grid. I also seperated each cards inner elements by creating a div to handle the card text. This allowed me to isolate CSS properties to each element (padding, etc) making the elements simpler to work with.
 
 ## Deploying the Site
 ### Deploying before Completion
